@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/singuntothelord/static/css/main.803f5aea.css",
+    "main.js": "/singuntothelord/static/js/main.f65296b8.js",
+    "service-worker.js": "/singuntothelord/service-worker.js",
+    "index.html": "/singuntothelord/index.html",
+    "main.803f5aea.css.map": "/singuntothelord/static/css/main.803f5aea.css.map",
+    "main.f65296b8.js.map": "/singuntothelord/static/js/main.f65296b8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.803f5aea.css",
+    "static/js/main.f65296b8.js"
+  ]
+}
