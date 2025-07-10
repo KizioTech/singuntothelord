@@ -1,6 +1,6 @@
 {
-  "short_name": "Hymn App",
-  "name": "Sing Unto The Lord",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
