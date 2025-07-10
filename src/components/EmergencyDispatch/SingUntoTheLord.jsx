@@ -8,14 +8,14 @@ const hymnsDatabase = [
     id: 1,
     title: "In Christ Alone",
     author: "Keith Getty & Stuart Townend",
-    category: "Contemporary",
+    category: "Easter",
     verses: [
       "In Christ alone my hope is found\nHe is my Light, my Strength, my Song\nThis Cornerstone, this Solid ground\nFirm through the fiercest drought and storm \n \n What heights of love, what depths of peace?\nWhen fears are stilled, when strivings cease\nMy Comforter, my All in All\nHere in the love of Christ I stand",
       "In Christ alone, who took on flesh\nFullness of God in helpless Babe\nThis Gift of love and righteousness\nScorned by the ones He came to save\n \n'Til on that cross as Jesus died\nThe wrath of God was satisfied\nFor every sin on Him was laid\nHere in the death of Christ I live",
       "There in the ground His body lay\nLight of the world by darkness slain\nThen bursting forth in glorious day\nUp from the grave He rose again \n \nAnd as He stands in victory\nSin's curse has lost its grip on me\nFor I am His and He is mine\nBought with the precious blood of Christ",
-      "No guilt in life, no fear in death\nThis is the power of Christ in me\nFrom life's first cry to final breath\nJesus commands my destiny\n \nNo power of hell, no scheme of man\nCan ever pluck me from His hand\n'Til He returns or calls me home\nHere in the power of Christ I'll stand"
+      "No guilt in life, no fear in death\nThis is the power of Christ in me\nFrom life's first cry to final breath\nJesus commands my destiny\n \nNo power of hell, no scheme of man\nCan ever pluck me from His hand\n'Til He returns or calls me home\nHere in the power of Christ I'll stand\n\n"
     ],
-    youtubeId: "YRPh9fymWu8&",
+    youtubeId: "YRPh9fymWu8",
     firstLine: "In Christ alone my hope is found"
   },
 
@@ -23,13 +23,13 @@ const hymnsDatabase = [
     id: 2,
     title: "All to Jesus I Surrender",
     author: "Judson W. Van DeVenter",
-    category: "Consecration",
+    category: "Worship",
     verses: [
       "All to Jesus I surrender,\nAll to Him I freely give;\nI will ever love and trust Him,\nIn His presence daily live.\n \nI surrender all, I surrender all;\nAll to Thee, my blessed Saviour,\nI surrender all.",
       "All to Jesus I surrender,\nHumbly at His feet I bow;\nWorldly pleasures all forsaken\nTake me, Jesus, take me now.",
       "All to Jesus I surrender,\nMake me Saviour, wholly Thine;\nLet me feel the Holy Spirit,\nTruly know Thou art mine.",
       "All to Jesus I surrender,\nLord, I give myself to Thee\nFill me with Thy love and power\nLet Thy blessings fall on me",
-      "All to Jesus I surrender:\nNow I feel he sacred flame;\nOh, the joy of full salvation!\nGlory, glory to His Name!"
+      "All to Jesus I surrender:\nNow I feel he sacred flame;\nOh, the joy of full salvation!\nGlory, glory to His Name!\n\n"
     ],
     youtubeId: "7614spqDTTE",
     firstLine: "All to Jesus I surrender"
@@ -43,7 +43,7 @@ const hymnsDatabase = [
       "Amazing grace! How sweet the sound!\nThat saved a wretch like me;\nI once was lost, but now am found;\nWas blind but now I see.",
       "'Twas grace that taught my heart to fear,\nAnd grace my fears relieved;\nHow precious did that grace appear,\nThe hour I first believed!",
       "Through many dangers, toils, and snares,\nI have already come;\n'Tis grace that brought me safe thus far,\nAnd grace will lead me home.",
-      "When we've been there ten thousand years,\nBright shining as the sin,\nWe've no less days to sing God's praise\nThan when we first begun."
+      "When we've been there ten thousand years,\nBright shining as the sin,\nWe've no less days to sing God's praise\nThan when we first begun.\n\n"
     ],
     youtubeId: "YXd-FyGMVto",
     firstLine: "Amazing grace! How sweet the sound!"
@@ -52,12 +52,12 @@ const hymnsDatabase = [
     id: 4,
     title: "Are You Washed in the Blood?",
     author: "Elisha A. Hoffman",
-    category: "Salvation",
+    category: "Easter",
     verses: [
       "Have you been to Jesus for the cleansing power?\nAre you washed in the blood of the lamb?\nAre you fully trusting in his grace this hour?\nAre you washed in the blood of the lamb?\n \nAre you washed in the blood,\nIn the soul-cleansing of the lamb?\nAre your garments spotless? Are they white as snow?\nAre you washed in the blood of the lamb?",
       "Are you walking daily by the saviour's side?\nAre you washed in the blood of the lamb?\nDo you rest each time in the crucified?\nAre you washed in the blood of the lamb?",
       "When the bridegroom cometh, will you robes be white?\nAre you washed in the blood of the lamb?\nWill your souls be ready for the mansions bright?\nAre you washed in the blood of the lamb?",
-      "Lay aside the garments that are stained with sin,\nAre you washed in the blood of the lamb?\nThere's a fountain flowing for the soul unclean,\nAre you washed in the blood of the lamb?"
+      "Lay aside the garments that are stained with sin,\nAre you washed in the blood of the lamb?\nThere's a fountain flowing for the soul unclean,\nAre you washed in the blood of the lamb?\n\n"
     ],
     youtubeId: "0enMoYc6EpM",
     firstLine: "Have you been to Jesus for the cleansing power?"
@@ -70,7 +70,7 @@ const hymnsDatabase = [
     verses: [
       "To God be the glory, great things He hath done,\nSo loved He the world that He gave us His Son,\nWho yielded His life an attonment for Sin,\nAnd opened the life-gate that all may go in.\n \nPraise the Lord, praise the Lord,\nLet the earth hear His voice;\nPraise the Lord, praise the Lord,\nLet the people rejoice;\nOh, come to the Father, through Jesus the Son,\nAnd give Him the glory! Great things He hath done.",
       "Oh, perfect redemption, the purchase of blood,\nTo every believer the promise of God;\nThe vilest offender who truly believes,\nThat moment from Jesus a pardon receives.",
-      "Great things He hath taught us,\ngreat things He hath done,\nAnd great our rejoicing through Jesus the Son;\nBut purer, and higher, and greater will be\nOur wonder, our transport when Jesus we see."
+      "Great things He hath taught us,\ngreat things He hath done,\nAnd great our rejoicing through Jesus the Son;\nBut purer, and higher, and greater will be\nOur wonder, our transport when Jesus we see.\n\n"
     ],
     youtubeId: "aKMfTwxAJ4k",
     firstLine: "To God be the glory, great things He hath done"
@@ -79,7 +79,7 @@ const hymnsDatabase = [
     id: 6,
     title: "Break Thou the Bread of Life",
     author: "Mary A. Lathbury",
-    category: "Scripture",
+    category: "Easter",
     verses: [
       "Break Thou the Bread of Life,\nDear Lord, to me,\nAs Thou didst break the loaves\nBeside the sea;\nBeyond the sacred page\nI seek Thee, Lord;\nMy Spirit pants for Thee,\nO living Word.",
       "Thou art the Bread of Life,\nO Lord, to me,\nThy Holy Word the truth\nThat saveth me:\nGive me to eat and live\nWith Thee above;\nTeach me to love Thy truth,\nFor Thou art Love.",
@@ -93,11 +93,11 @@ const hymnsDatabase = [
     id: 7,
     title: "Above the Bright Blue",
     author: "George S. Schuler",
-    category: "Heaven",
+    category: "Traditional",
     verses: [
       "There's a beautiful place called heaven,\nIt is hidden above the bright blue,\nWhere the good, who from earth ties are riven,\nLive and love an eternity through.\n \nAbove the bright blue, the beautiful blue,\nJesus is waiting for me and for you;\nHeaven is there, not far from our sight,\nBeautiful city of light.",
       "This land of sweet rest awaits us,\nSomeday it will break on our view,\n'Tis promised by Christ the Redeemer,\nTo His followers faithful and true.",
-      "We know not when He shall call us,\nWhether soon, the glad summons shall be,\nBut we know, when we pass o'er the river,\nThe glory of Jesus we'll see."
+      "We know not when He shall call us,\nWhether soon, the glad summons shall be,\nBut we know, when we pass o'er the river,\nThe glory of Jesus we'll see.\n\n"
     ],
     youtubeId: "PkjjZLhcQ34",
     firstLine: "There's a beautiful place called heaven"
@@ -106,12 +106,12 @@ const hymnsDatabase = [
     id: 8,
     title: "Nearer, My God, to Thee",
     author: "Sarah F. Adams",
-    category: "Prayer",
+    category: "Worship",
     verses: [
       "Nearer, my God, to Thee,\nNearer to Thee!\nEven though it be a cross\nThat raiseth me;\nStill all my song shall be:\n\"Nearer, my God, to Thee,\nNear to Thee.\"",
       "Though like the wanderer,\nThe sun gone down,\nDarkness be over me,\nMy rest a stone:\nYet in my dreams I'd be\nNearer, my God, to Thee,\nNearer to Thee!",
       "Then, with my waking thoughts\nBright with Thy praise,\nOut of my stony grief\nBethel I'll raise;\nSo, by my woes to be\nNearer, my God, to Thee,\nNearer to Thee!",
-      "Or if on joyful wing\nClearing the sky,\nSun, moon, and stars forgot,\nUpwards I fly,\nStill all my song shall be:\n\"Nearer, my God, to Thee,\nNearer to Thee!\""
+      "Or if on joyful wing\nClearing the sky,\nSun, moon, and stars forgot,\nUpwards I fly,\nStill all my song shall be:\n\"Nearer, my God, to Thee,\nNearer to Thee!\"\n\n"
     ],
     youtubeId: "qU4kYLe8z_U",
     firstLine: "Nearer, my God, to Thee"
@@ -120,12 +120,12 @@ const hymnsDatabase = [
     id: 9,
     title: "No, Not One",
     author: "Johnson Oatman Jr.",
-    category: "Friendship",
+    category: "Traditional",
     verses: [
       "There's not a friend like the lowly Jesus,\nNo, not one! No, not one!\nNone else could heal all our soul's diseases,\nNo, not one! No, not one!\n \nJesus knows all about our struggles\nHe will guide till the day is done\nThere's not a friend like the lowly Jesus,\nNo, not one! No, not one!",
       "No friend like him is so high and holy,\nNo, not one! No, not one!\nAnd yet no friend is so meek and lowly,\nNo, not one! No, not one!",
       "There's not an hour that He is not near us,\nNo, not one! No, not one!\nNo night so dark but his love can cheer us,\nNo, not one! No, not one!",
-      "Did ever saint find this friend forsake him,\nNo, not one! No, not one!\nOr sinner find that He would not take him?\nNo, not one! No, not one!"
+      "Did ever saint find this friend forsake him,\nNo, not one! No, not one!\nOr sinner find that He would not take him?\nNo, not one! No, not one!\n\n"
     ],
     youtubeId: "iddd3qXiN5Y",
     firstLine: "There's not a friend like the lowly Jesus"
@@ -134,7 +134,7 @@ const hymnsDatabase = [
     id: 10,
     title: "Nothing but the Blood of Jesus",
     author: "Robert Lowry",
-    category: "Salvation",
+    category: "Easter",
     verses: [
       "What can wash away my sins?\nNothing but the blood of Jesus!\nWhat can make me whole again?\nNothing but the blood of Jesus!\n \nO precious is the flow\nThat makes me white as snow!\nNo other fount I know:\nNothing but the blood of Jesus!",
       "For my pardon this I see\nNothing but the blood of Jesus!\nFor my cleansing this my plea\nNothing but the blood of Jesus!",
@@ -148,12 +148,12 @@ const hymnsDatabase = [
     id: 11,
     title: "Oh, How I Love Jesus",
     author: "Frederick Whitfield",
-    category: "Love",
+    category: "Traditional",
     verses: [
       "There is a name I love to hear\nI love to sing its worth;\nIt sounds like music in mine ear,\nThe sweetest name on earth.\n \nOh, how I love Jesus,\nOh, how I love Jesus,\nOh, how I love Jesus,\nBecause He first loved me!",
       "It tells me of a saviour's love,\nWho died to set me free;\nIt tells me of His precious blood\nThe sinner's perfect plea.",
       "It tells me what my father has\nIn store for every day\nAnd though I tread a darksome path,\nYields sunshine all the way.",
-      "It tells of one whose loving heart\nCan feel my deepest woe,\nWho in each sorrow bears a part,\nThat none can bear below."
+      "It tells of one whose loving heart\nCan feel my deepest woe,\nWho in each sorrow bears a part,\nThat none can bear below.\n\n"
     ],
     youtubeId: "ZbFY7IzpOVs",
     firstLine: "There is a name I love to hear"
@@ -162,12 +162,12 @@ const hymnsDatabase = [
     id: 12,
     title: "Keep Me Near the Cross",
     author: "Fanny Crosby",
-    category: "Cross",
+    category: "Easter",
     verses: [
       "Jesus, keep me near the Cross;\nThere a precious fountain,\nFree to all, a healing stream,\nFlows from Calvary's Mountain.\n \nIn the Cross, in the Cross,\nBe my glory ever;\nTill my raptured soul shall find\nRest beyond the river.",
       "Near the Cross, a trembling soul,\nLove and mercy found me;\nThere the bright and morning star\nShed its beams around me.",
       "Near the Cross, O Lamb of God,\nBring its scenes before me;\nHelp me walk from day to day\nWith its shadow o'er me.",
-      "Near the Cross I'll watch and wait,\nHoping, trusting ever,\nTill I reach the golden strand,\nJust beyond the river."
+      "Near the Cross I'll watch and wait,\nHoping, trusting ever,\nTill I reach the golden strand,\nJust beyond the river.\n\n"
     ],
     youtubeId: "xXoNeJdH3n4",
     firstLine: "Jesus, keep me near the Cross"
@@ -176,12 +176,13 @@ const hymnsDatabase = [
     id: 13,
     title: "Onward Christian Soldiers",
     author: "Sabine Baring-Gould",
-    category: "Battle",
+    category: "Warship",
     verses: [
-      "Onward Christian soldiers\nMarching as to war;\nWith the cross of Jesus,\nGoing on before.\nChrist the loyal master,\nLeads against the foe;\nForward into battle.\nSee his banners go.",
-      "Onward Christian soldiers,\nMarching as to war,\nWith the cross of Jesus,\nGoing on before.\nAt the sign of triumph,\nSatan's legions flee;\nOn then Christian soldiers,\nOn to victory.\nHell's foundations quiver\nAt the shout of praise,\nBrothers lift your voices,\nLoud your anthem raise.",
+      "Onward Christian soldiers\nMarching as to war;\nWith the cross of Jesus,\nGoing on before.\nChrist the loyal master,\nLeads against the foe;\nForward into battle.\nSee his banners go. \n\nOnward Christian soldiers,\nMarching as to war,\nWith the cross of Jesus,\nGoing on before.",
+      "At the sign of triumph,\nSatan's legions flee;\nOn then Christian soldiers,\nOn to victory.\nHell's foundations quiver\nAt the shout of praise,\nBrothers lift your voices,\nLoud your anthem raise.",
       "Like a mighty army\nMoves the church of God.\nBrothers, we are treading,\nWhere the saints have trod;\nWe are not divided;\nAll one body we,\nOne in the hope and doctrine,\nOne in charity.",
-      "Crowns and thrones may perish\nKingdoms rise and wane,\nBut the church of Jesus\nConstant will remain;\nGates of hell can never\nAgainst that church prevail;\nWe have Christ's own promise\nWe can never fail.\nOnward, then, people\nJoin our happy throng,\nBlend with ours with your voices,\nIn the triumph song;\nGlory, laud and honour\nUnto Christ our king;\nThis through countless ages\nMen and angels sing."
+      "Crowns and thrones may perish\nKingdoms rise and wane,\nBut the church of Jesus\nConstant will remain;\nGates of hell can never\nAgainst that church prevail;\nWe have Christ's own promise.\nWe can never fail.",
+      "Onward, then, people\nJoin our happy throng,\nBlend with ours with your voices,\nIn the triumph song;\nGlory, laud and honour\nUnto Christ our king;\nThis through countless ages\nMen and angels sing.\n\n"
     ],
     youtubeId: "p3fMLYOWkO4",
     firstLine: "Onward Christian soldiers"
@@ -190,7 +191,7 @@ const hymnsDatabase = [
     id: 14,
     title: "Rock of Ages",
     author: "Augustus Toplady",
-    category: "Salvation",
+    category: "Praise",
     verses: [
       "Rock of Ages, cleft for me,\nLet me hide myself in Thee;\nLet the water and the blood,\nFrom Thy riven side which flowed,\nBe of sin the double cure,\nCleanse me from its guilt and power.",
       "Not the labours of my hands\nCan fulfil Thy law's demands;\nCould my zeal no respite know\nCould my tears for ever flow\nAll for sin could not atone;\nThou must save, and Thou alone.",
@@ -199,6 +200,232 @@ const hymnsDatabase = [
     ],
     youtubeId: "5hyJuuo24tY",
     firstLine: "Rock of Ages, cleft for me"
+  },
+  {
+    id: 15,
+    title: "Stand Up For Jesus",
+    author: "George Duffield Jr.",
+    category: "Worship",
+    verses: [
+      "Stand up! Stand up for Jesus,\nYe soldiers of the cross!\nLift high His royal banner,\nIt must not suffer loss.\nFrom victory unto victory\nHis army shall He lead,\nTill every foe is vanquished,\nAnd Christ is Lord indeed.",
+      "Stand up! Stand up for Jesus,\nStand in His strength alone!\nThe arm of flesh will fail you;\nYe dare not trust your own.\nPut on the Gospel armour,\nAnd, watching unto prayer,\nWhere duty calls, or danger,\nBe never wanting there.",
+      "Stand up! Stand up for Jesus,\nThe strife will not be long!\nThis day the noise of battle,\nThe next the victor's song;\nTo him that overcometh\nA crown of life shall be;\nHe, with the King of Glory,\nShall reign eternally."
+    ],
+    youtubeId: "wgRudMZvrjA",
+    firstLine: "Stand up! Stand up for Jesus"
+  },
+  {
+    id: 16,
+    title: "Sweet By And By",
+    author: "Sanford F. Bennett",
+    category: "Traditional",
+    verses: [
+      "There's a land that is fairer than day,\nAnd by faith we can see it afar;\nFor the Father waits over the way\nTo prepare us a dwelling place there.\n\nIn the sweet by and by,\nWe shall meet on that beautiful shore;\nIn the sweet by and by\nWe shall meet on that beautiful shore.",
+      "We shall sing on that beautiful shore\nThe melodious songs of the blest,\nAnd our spirits shall sorrow no more,\nNot a sigh for the blessing of rest.",
+      "To our bountiful Father above\nWe will offer our tribute of praise\nFor the glorious gift of His love\nAnd the blessings that hallow our days.\n\n"
+    ],
+    youtubeId: "Ciw3d6oUYAU",
+    firstLine: "There's a land that is fairer than day"
+  },
+  {
+    id: 17,
+    title: "Blessed Assurance",
+    author: "Fanny Crosby",
+    category: "Traditional",
+    verses: [
+      "Blessed assurance—Jesus is mine!\nO what a foretaste of glory divine!\nHeir of salvation, purchase of God;\nBorn of His Spirit, washed in His blood.\n\n This is my story, this is my song,\nPraising my Saviour all the day long;\nThis is my story, this is my song,\nPraising my Saviour all the day long.",
+      "Perfect submission, perfect delight,\nVisions of rapture now burst on my sight;\nAngels descending, bring from above\nEchoes of mercy, whispers of love.",
+      "Perfect submission, all is at rest,\nI in my Saviour am happy and blest;\nWatching and waiting, looking above,\nFilled with His goodness, lost in His love.\n\n"
+    ],
+    youtubeId: "ZaAUugfVVO8",
+    firstLine: "Blessed assurance—Jesus is mine!"
+  },
+  {
+    id: 18,
+    title: "Trust And Obey",
+    author: "John H. Sammis",
+    category: "Warship",
+    verses: [
+      "When we walk with the Lord\nIn the light of His Word,\nWhat a glory He sheds on our way!\nWhile we do His good will,\nHe abides with us still,\nAnd with all who will trust and obey.\n\n Trust and obey,\nFor there's no other way\nTo be happy in Jesus\nBut to trust and obey.",
+      "Not a shadow can rise,\nNot a cloud in the skies,\nBut His smile quickly drives it away;\nNot a doubt or a fear,\nNot a sigh or a tear,\nCan abide while we trust and obey.",
+      "Not a burden we bear,\nNot a sorrow we share,\nBut our toil He doth richly repay;\nNot a grief or a loss,\nNot a frown or a cross,\nBut is blessed if we trust and obey.",
+      "But we never can prove\nThe delights of His love\nUntil all on the altar we lay;\nFor the favor He shows,\nFor the joy He bestows,\nAre for them who will trust and obey.",
+      "Then in fellowship sweet\nWe will sit at His feet,\nOr we'll walk by His side in the way;\nWhat He says we will do,\nWhere He sends, we will go—\nNever fear, only trust and obey.\n\n"
+    ],
+    youtubeId: "n4U-yx6cFb0",
+    firstLine: "When we walk with the Lord"
+  },
+  {
+    id: 19,
+    title: "What A Friend We Have In Jesus",
+    author: "Joseph M. Scriven",
+    category: "Friendship",
+    verses: [
+      "What a Friend we have in Jesus,\nAll our sins and griefs to bear!\nWhat a privilege to carry\nEverything to God in prayer!\nO what peace we often forfeit,\nO what needless pain we bear,\nAll because we do not carry\nEverything to God in prayer!",
+      "Have we trials and temptations?\nIs there trouble anywhere?\nWe should never be discouraged—\nTake it to the Lord in prayer.\nCan we find a friend so faithful,\nWho will all our sorrows share?\nJesus knows our every weakness—\nTake it to the Lord in prayer.",
+      "Are we weak and heavy-laden,\nCumbered with a load of care?\nPrecious Saviour, still our refuge—\nTake it to the Lord in prayer.\nDo thy friends despise, forsake thee?\nTake it to the Lord in prayer!\nIn His arms He'll take and shield thee,\nThou wilt find a solace there."
+    ],
+    youtubeId: "LarFhGeE-ac",
+    firstLine: "What a Friend we have in Jesus"
+  },
+  {
+    id: 20,
+    title: "It Is Well With My Soul",
+    author: "Horatio G. Spafford",
+    category: "Peace",
+    verses: [
+      "When peace like a river attendeth my way,\nWhen sorrows like sea billows roll—\nWhatever my lot, Thou hast taught me to say,\n\"It is well, it is well with my soul!\"\n\nIt is well (it is well), with my soul (with my soul);\nIt is well, it is well with my soul.",
+      "Though Satan should buffet, though trials should come,\nLet this blest assurance control:\nThat Christ hath regarded my helpless estate,\nAnd hath shed His own blood for my soul.",
+      "My sin—O the bliss of this glorious thought!—\nMy sin, not in part, but the whole,\nIs nailed to His cross, and I bear it no more:\nPraise the Lord, praise the Lord, O my soul!",
+      "And Lord, haste the day when my faith shall be sight,\nThe clouds be rolled back as a scroll;\nThe trump shall resound, and the Lord shall descend:\nEven so—it is well with my soul."
+    ],
+    youtubeId: "ZYrL9ea1XUg",
+    firstLine: "When peace like a river attendeth my way"
+  },
+  {
+    id: 21,
+    title: "Bringing In The Sheaves",
+    author: "Knowles Shaw",
+    category: "Harvest",
+    verses: [
+      "Sowing in the morning, sowing seeds of kindness,\nSowing in the noontide and the dewy eve;\nWaiting for the harvest, and the time of reaping,\nWe shall come rejoicing, bringing in the sheaves!\n \nBringing in the sheaves, bringing in the sheaves,\nWe shall come rejoicing, bringing in the sheaves;\nBringing in the sheaves, bringing in the sheaves,\nWe shall come rejoicing, bringing in the sheaves.",
+      "Sowing in the sunshine, sowing in the shadows,\nFearing neither clouds nor winter's chilling breeze;\nBy and by the harvest, and the labor ended,\nWe shall come rejoicing, bringing in the sheaves!",
+      "Going forth with weeping, sowing for the Master,\nThough the loss sustained our spirit often grieves;\nWhen our weeping's over, He will bid us welcome—\nWe shall come rejoicing, bringing in the sheaves!\n"
+    ],
+    youtubeId: "xYagTrjtpPE",
+    firstLine: "Sowing in the morning, sowing seeds of kindness"
+  },
+  {
+    id: 22,
+    title: "Jesus Loves Me",
+    author: "Anna B. Warner",
+    category: "Children",
+    verses: [
+      "Jesus loves me! This I know,\nFor the Bible tells me so;\nLittle ones to Him belong\nThey are weak, but He is strong.\n \n Yes Jesus loves me!\nYes Jesus loves me!\nYes Jesus loves me!\nThe Bible tells me so.",
+      "Jesus loves me! He who died,\nHeaven's gate to open wide;\nHe will wash away my sin,\nLet His little child come in.",
+      "Jesus loves me! He will stay\nClose beside me all the way;\nThou hast bled and died for me,\nI will henceforth live for Thee."
+    ],
+    youtubeId: "AblWldpYfXg",
+    firstLine: "Jesus loves me! This I know"
+  },
+  {
+    id: 23,
+    title: "The Solid Rock",
+    author: "Edward Mote",
+    category: "Faith",
+    verses: [
+      "My hope is built on nothing less\nThan Jesus' blood and righteousness;\nI dare not trust the sweetest frame,\nBut wholly lean on Jesus' name. \n \nOn Christ, the solid rock, I stand;\nAll other ground is sinking sand;\nAll other ground is sinking sand.",
+      "When darkness veils His lovely face,\nI rest on His unchanging grace;\nIn every high and stormy gale,\nMy anchor holds within the veil.",
+      "His oath, His covenant, His blood,\nSupport me in the whelming flood;\nWhen all around my soul gives way,\nHe then is all my hope and stay.",
+      "When He shall come with trumpet sound,\nO may I then in Him be found,\nClothed in His righteousness alone,\nFaultless to stand before the throne."
+    ],
+    youtubeId: "4p4OrSEPGvI",
+    firstLine: "My hope is built on nothing less"
+  },
+  {
+    id: 24,
+    title: "There's Power In The Blood",
+    author: "Lewis E. Jones",
+    category: "Salvation",
+    verses: [
+      "Would you be free from your burden of sin?\nThere's pow'r in the blood, pow'r in the blood;\nWould you o'er evil a victory win?\nThere's wonderful pow'r in the blood.\n \nThere's pow'r, pow'r, Wonder-working pow'r\nIn the blood of the Lamb;\nThere's pow'r, pow'r, Wonder-working pow'r\nIn the precious blood of the Lamb.",
+      "Would you be free from your passion and pride?\nThere's pow'r in the blood, pow'r in the blood;\nCome for a cleansing to Calvary's tide—\nThere's wonderful pow'r in the blood.",
+      "Would you be whiter, much whiter than snow?\nThere's pow'r in the blood, pow'r in the blood;\nSin-stains are lost in its life-giving flow—\nThere's wonderful pow'r in the blood.",
+      "Would you do service for Jesus your King?\nThere's pow'r in the blood, pow'r in the blood;\nWould you live daily His praises to sing?\nThere's wonderful pow'r in the blood."
+    ],
+    youtubeId: "SeTE0W7K4sU",
+    firstLine: "Would you be free from your burden of sin?"
+  },
+  {
+    id: 25,
+    title: "Count Your Blessings",
+    author: "Johnson Oatman Jr.",
+    category: "Gratitude",
+    verses: [
+      "When upon life's billows you are tempest-tossed,\nWhen you are discouraged, thinking all is lost,\nCount your many blessings, name them one by one,\nAnd it will surprise you what the Lord hath done.\n \nCount your blessings, name them one by one,\nCount your blessings, see what God hath done;\nCount your blessings, name them one by one,\nCount your many blessings, see what God hath done.",
+      "Are you ever burdened with a load of care?\nDoes the cross seem heavy you are called to bear?\nCount your many blessings, every doubt will fly,\nAnd you will keep singing as the days go by.",
+      "When you look at others with their lands and gold,\nThink that Christ has promised you His wealth untold;\nCount your many blessings—wealth can never buy\nYour reward in heaven, nor your home on high."
+    ],
+    youtubeId: "392T7WCz3kU",
+    firstLine: "When upon life's billows you are tempest-tossed"
+  },
+  {
+    id: 26,
+    title: "Be With Me Lord",
+    author: "Thomas O. Chisholm",
+    category: "Guidance",
+    verses: [
+      "Be with me, Lord, I cannot live without Thee,\nI dare not try to take one step alone,\nI cannot bear the loads of life, unaided,\nI need Thy strength to lean myself upon.",
+      "Be with me, Lord, and then if dangers threaten,\nIf storms of trial burst above my head,\nIf lashing seas leap ev'rywhere about me,\nThey cannot harm, or make my heart afraid.",
+      "Be with me, Lord! No other gift or blessing\nThou couldst bestow could with this one compare—\nA constant sense of Thy abiding presence,\nWhere'er I am, to feel that Thou art near.",
+      "Be with me, Lord, when loneliness o'ertakes me,\nWhen I must weep amid the fires of pain,\nAnd when shall come the hour of \"my departure\"\nFor \"worlds unknown,\" O Lord, be with me then."
+    ],
+    youtubeId: "vgPgQ_yHqG4",
+    firstLine: "Be with me, Lord, I cannot live without Thee"
+  },
+  {
+    id: 27,
+    title: "When We All Get To Heaven",
+    author: "Eliza E. Hewitt",
+    category: "Heaven",
+    verses: [
+      "Sing the wondrous love of Jesus,\nSing His mercy and His grace;\nIn the mansions bright and blessed\nHe'll prepare for us a place.\n \nWhen we all get to heaven,\nWhat a day of rejoicing that will be!\nWhen we all see Jesus,\nWe'll sing and shout the victory!",
+      "While we walk the pilgrim pathway,\nClouds will overspread the sky;\nBut when trav'ling days are over,\nNot a shadow, not a sigh.",
+      "Let us then be true and faithful,\nTrusting, serving every day;\nJust one glimpse of Him in glory\nWill the toils of life repay."
+    ],
+    youtubeId: "uEexjjSkCV8",
+    firstLine: "Sing the wondrous love of Jesus"
+  },
+  {
+    id: 28,
+    title: "Kneel At The Cross",
+    author: "Charles E. Moody",
+    category: "Invitation",
+    verses: [
+      "Kneel at the cross,\nChrist will meet you there,\nCome while He waits for you;\nList to His voice,\nLeave with Him your care,\nAnd begin life anew. \n \nKneel at the cross,\nLeave every care,\nKneel at the cross,\nJesus will meet you there.",
+      "Kneel at the cross,\nThere is room for all\nWho would His glory share;\nBliss there awaits,\nHarm can ne'er befall\nThose who are anchored there.",
+      "Kneel at the cross,\nGive your idols up,\nLook unto realms above;\nTurn not away\nTo life's sparkling cup—\nTrust only in His love."
+    ],
+    youtubeId: "F9g6VJwG2ks",
+    firstLine: "Kneel at the cross"
+  },
+  {
+    id: 29,
+    title: "You Overcame",
+    author: "Jon Egan",
+    category: "Victory",
+    verses: [
+      "Seated above, enthroned in the Father's love\nDestined to die, poured out for all mankind\nGod's only Son\nPerfect and spotless One\nHe never sinned\nBut suffered as if He did\n \n All authority\nEvery victory is Yours\nSavior, worthy of honor and glory\nWorthy of all our praise\nYou overcame \n\nJesus, awesome in power forever\nAwesome and great is Your name\nYou overcame",
+      "Power in hand\nSpeaking the Father's plan\nYou're sending us out\nLight in this broken land",
+      "We will overcome\nBy the blood of the Lamb\nAnd the word of our testimony\nEveryone overcome",
+    ],
+    youtubeId: "rP_XATZQ8sU",
+    firstLine: "Seated above, enthroned in the Father's love"
+  },
+  {
+    id: 30,
+    title: "You Are The Song",
+    author: "Doug Moody",
+    category: "Worship",
+    verses: [
+      "You are the words and the music.\nYou are the song that I sing.\nYou are the melody. You are the harmony.\nPraise to Your name, I will bring.\n\nYou are the Lord of lords.\nYou are the Mighty God.\nYou are the King of all kings.\nSo now I give back to You\nthe song that You gave to me.\nYou are the song that I sing.",
+      "You are the words and the music.\nYou are the song that I sing.\nYou are the melody. You are the harmony.\nPraise to Your name, I will bring.\n\n"
+    ],
+    youtubeId: "9_szFKZOg48",
+    firstLine: "You are the words and the music"
+  },
+  {
+    id: 31,
+    title: "He Gave Me A Song",
+    author: "Lizzie De Armond",
+    category: "Joy",
+    verses: [
+      "He took my burdens all away, up to a brighter day,\nHe gave me a song, a wonderful song;\nA wonderful song I now can sing, in my heart joy bells ring,\nHe gave me a song a wonderful song.\n\n\nHe gave me a song to sing about,\nHe lifted me from sin and doubt,\nOh, praise His name! He is my King.\nA wonderful song, He is to me.",
+      "Brighter the way grows ev'ry day, walking the heav'nly way,\nHe gave me a song, a wonderful song;\nA wonderful song I now can sing, praises to Him, my King,\nHe gave me a song, a wonderful song.",
+      "I am redeemed no more to die, never to say \"goodbye,\"\nHe gave me a song, a wonderful song;\nAnd some of these days in that fair land, sing with the chorus grand,\nHe gave me a song, a wonderful song."
+    ],
+    youtubeId: "hD6qKikbaL4",
+    firstLine: "He took my burdens all away"
   }
 ];
 
@@ -237,8 +464,8 @@ const SacredHymnsApp = () => {
       <div className="fixed inset-0 -z-10 overflow-hidden">
         {/* Sky gradient */}
         <div className={`absolute inset-0 transition-colors duration-1000 ${darkMode
-            ? 'bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-900'
-            : 'bg-gradient-to-b from-sky-100 via-blue-100 to-sky-50'
+          ? 'bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-900'
+          : 'bg-gradient-to-b from-sky-100 via-blue-100 to-sky-50'
           }`}></div>
 
         {/* Animated clouds */}
