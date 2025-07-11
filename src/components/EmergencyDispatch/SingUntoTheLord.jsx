@@ -1,6 +1,17 @@
+
 import { Cloud } from 'lucide-react';
+import { Info } from 'lucide-react';
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Search, Heart, Play, Pause, Volume2, Grid, List, Moon, Sun, Home, ArrowLeft, Settings, ChevronDown, ChevronUp, Music, Clock, Star, Book, Cross, Gift, Sunrise } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faGithub,
+  faTelegram,
+  faWhatsapp
+} from '@fortawesome/free-brands-svg-icons';
 
 // Expanded hymn database - you can easily add more hymns here
 const hymnsDatabase = [
@@ -16,7 +27,9 @@ const hymnsDatabase = [
       "No guilt in life, no fear in death\nThis is the power of Christ in me\nFrom life's first cry to final breath\nJesus commands my destiny\n \nNo power of hell, no scheme of man\nCan ever pluck me from His hand\n'Til He returns or calls me home\nHere in the power of Christ I'll stand\n\n"
     ],
     youtubeId: "YRPh9fymWu8",
-    firstLine: "In Christ alone my hope is found"
+    firstLine: "In Christ alone my hope is found",
+    bio: "Keith Getty and Stuart Townend are modern hymn writers from the UK known for revitalizing congregational worship. 'In Christ Alone' is one of the most beloved contemporary hymns, first released in 2001."
+
   },
 
   {
@@ -32,7 +45,8 @@ const hymnsDatabase = [
       "All to Jesus I surrender:\nNow I feel he sacred flame;\nOh, the joy of full salvation!\nGlory, glory to His Name!\n\n"
     ],
     youtubeId: "7614spqDTTE",
-    firstLine: "All to Jesus I surrender"
+    firstLine: "All to Jesus I surrender",
+    bio: "Judson W. Van DeVenter was an American hymn writer and evangelist in the late 19th century. 'I Surrender All' is one of his most famous hymns, emphasizing total commitment to Christ."
   },
   {
     id: 3,
@@ -46,7 +60,8 @@ const hymnsDatabase = [
       "When we've been there ten thousand years,\nBright shining as the sin,\nWe've no less days to sing God's praise\nThan when we first begun.\n\n"
     ],
     youtubeId: "YXd-FyGMVto",
-    firstLine: "Amazing grace! How sweet the sound!"
+    firstLine: "Amazing grace! How sweet the sound!",
+    bio: "John Newton was an 18th-century English clergyman and former slave trader who became a prominent abolitionist. 'Amazing Grace' is his most famous hymn, reflecting his profound spiritual transformation."
   },
   {
     id: 4,
@@ -60,7 +75,8 @@ const hymnsDatabase = [
       "Lay aside the garments that are stained with sin,\nAre you washed in the blood of the lamb?\nThere's a fountain flowing for the soul unclean,\nAre you washed in the blood of the lamb?\n\n"
     ],
     youtubeId: "0enMoYc6EpM",
-    firstLine: "Have you been to Jesus for the cleansing power?"
+    firstLine: "Have you been to Jesus for the cleansing power?",
+    bio: "Elisha A. Hoffman was a 19th-century American hymn writer and evangelist. 'Are You Washed in the Blood?' is one of his most enduring hymns, emphasizing the cleansing power of Christ's sacrifice."
   },
   {
     id: 5,
@@ -73,7 +89,8 @@ const hymnsDatabase = [
       "Great things He hath taught us,\ngreat things He hath done,\nAnd great our rejoicing through Jesus the Son;\nBut purer, and higher, and greater will be\nOur wonder, our transport when Jesus we see.\n\n"
     ],
     youtubeId: "aKMfTwxAJ4k",
-    firstLine: "To God be the glory, great things He hath done"
+    firstLine: "To God be the glory, great things He hath done",
+    bio: "Fanny Crosby was a prolific 19th-century American hymn writer, known for her deep faith and prolific output. 'To God Be the Glory' is one of her most famous hymns, celebrating God's grace and salvation."
   },
   {
     id: 6,
@@ -87,7 +104,8 @@ const hymnsDatabase = [
       "Bless Thou the truth, dear Lord,\nTo me, to me,\nAs Thou didst bless the bread\nBy Galilee;\nThen shall all bondage cease,\nAll fetters fall,\nAnd I shall find my peace,\nMy all in all."
     ],
     youtubeId: "euz0ot2dDY8",
-    firstLine: "Break Thou the Bread of Life"
+    firstLine: "Break Thou the Bread of Life",
+    bio: "Mary A. Lathbury was a 19th-century American hymn writer and social reformer. 'Break Thou the Bread of Life' is a beloved hymn that emphasizes the importance of Scripture and spiritual nourishment."
   },
   {
     id: 7,
@@ -100,7 +118,8 @@ const hymnsDatabase = [
       "We know not when He shall call us,\nWhether soon, the glad summons shall be,\nBut we know, when we pass o'er the river,\nThe glory of Jesus we'll see.\n\n"
     ],
     youtubeId: "PkjjZLhcQ34",
-    firstLine: "There's a beautiful place called heaven"
+    firstLine: "There's a beautiful place called heaven",
+    bio: "George S. Schuler was a 20th-century hymn writer known for his uplifting and hopeful lyrics. 'Above the Bright Blue' is a hymn that speaks of the promise of heaven and eternal life with Christ."
   },
   {
     id: 8,
@@ -114,7 +133,8 @@ const hymnsDatabase = [
       "Or if on joyful wing\nClearing the sky,\nSun, moon, and stars forgot,\nUpwards I fly,\nStill all my song shall be:\n\"Nearer, my God, to Thee,\nNearer to Thee!\"\n\n"
     ],
     youtubeId: "qU4kYLe8z_U",
-    firstLine: "Nearer, my God, to Thee"
+    firstLine: "Nearer, my God, to Thee",
+    bio: "Sarah F. Adams was a 19th-century English poet and hymn writer. 'Nearer, My God, to Thee' is one of her most famous hymns, expressing a deep desire for closeness to God, even in times of trial."
   },
   {
     id: 9,
@@ -128,7 +148,8 @@ const hymnsDatabase = [
       "Did ever saint find this friend forsake him,\nNo, not one! No, not one!\nOr sinner find that He would not take him?\nNo, not one! No, not one!\n\n"
     ],
     youtubeId: "iddd3qXiN5Y",
-    firstLine: "There's not a friend like the lowly Jesus"
+    firstLine: "There's not a friend like the lowly Jesus",
+    bio: "Johnson Oatman Jr. was a 19th-century American hymn writer known for his simple yet profound lyrics. 'No, Not One' is a beloved hymn that emphasizes the unique friendship and support found in Jesus."
   },
   {
     id: 10,
@@ -139,10 +160,11 @@ const hymnsDatabase = [
       "What can wash away my sins?\nNothing but the blood of Jesus!\nWhat can make me whole again?\nNothing but the blood of Jesus!\n \nO precious is the flow\nThat makes me white as snow!\nNo other fount I know:\nNothing but the blood of Jesus!",
       "For my pardon this I see\nNothing but the blood of Jesus!\nFor my cleansing this my plea\nNothing but the blood of Jesus!",
       "Nothing can for sin atone\nNothing but the blood of Jesus!\nNaught of good that I have done\nNothing but the blood of Jesus!",
-      "This is all my hope and peace\nNothing but the blood of Jesus!\nThis is all my righteousness\nNothing but the blood of Jesus!"
+      "This is all my hope and peace\nNothing but the blood of Jesus!\nThis is all my righteousness\nNothing but the blood of Jesus!\n\n"
     ],
     youtubeId: "WN9AEr15uNM",
-    firstLine: "What can wash away my sins?"
+    firstLine: "What can wash away my sins?",
+    bio: "Robert Lowry was a 19th-century American Baptist minister and hymn writer. 'Nothing but the Blood of Jesus' is one of his most famous hymns, celebrating the redemptive power of Christ's sacrifice."
   },
   {
     id: 11,
@@ -156,7 +178,8 @@ const hymnsDatabase = [
       "It tells of one whose loving heart\nCan feel my deepest woe,\nWho in each sorrow bears a part,\nThat none can bear below.\n\n"
     ],
     youtubeId: "ZbFY7IzpOVs",
-    firstLine: "There is a name I love to hear"
+    firstLine: "There is a name I love to hear",
+    bio: "Frederick Whitfield was a 19th-century English clergyman and hymn writer. 'Oh, How I Love Jesus' is a cherished hymn that expresses deep affection for Jesus and the joy of His love."
   },
   {
     id: 12,
@@ -170,7 +193,8 @@ const hymnsDatabase = [
       "Near the Cross I'll watch and wait,\nHoping, trusting ever,\nTill I reach the golden strand,\nJust beyond the river.\n\n"
     ],
     youtubeId: "xXoNeJdH3n4",
-    firstLine: "Jesus, keep me near the Cross"
+    firstLine: "Jesus, keep me near the Cross",
+    bio: "Fanny Crosby, a prolific 19th-century hymn writer, wrote 'Keep Me Near the Cross' to express her desire to remain close to the sacrifice of Christ. Her hymns often reflect deep spiritual insight and devotion."
   },
   {
     id: 13,
@@ -185,7 +209,8 @@ const hymnsDatabase = [
       "Onward, then, people\nJoin our happy throng,\nBlend with ours with your voices,\nIn the triumph song;\nGlory, laud and honour\nUnto Christ our king;\nThis through countless ages\nMen and angels sing.\n\n"
     ],
     youtubeId: "p3fMLYOWkO4",
-    firstLine: "Onward Christian soldiers"
+    firstLine: "Onward Christian soldiers",
+    bio: "Sabine Baring-Gould was a 19th-century English writer and hymnologist. 'Onward Christian Soldiers' is one of his most famous hymns, emphasizing the Christian's call to spiritual warfare and unity in Christ."
   },
   {
     id: 14,
@@ -199,7 +224,8 @@ const hymnsDatabase = [
       "While I draw this fleeing breath,\nWhen mine eyes shall close in death,\nWhen I soar through tracts unknown\nSee Thee on Thy judgment throne;\nRock of Ages, cleft for me,\nLet me hide myself in Thee."
     ],
     youtubeId: "5hyJuuo24tY",
-    firstLine: "Rock of Ages, cleft for me"
+    firstLine: "Rock of Ages, cleft for me",
+    bio: "Augustus Toplady was an 18th-century English Anglican cleric and hymn writer. 'Rock of Ages' is one of his most enduring hymns, emphasizing the sufficiency of Christ's sacrifice for salvation."
   },
   {
     id: 15,
@@ -208,11 +234,13 @@ const hymnsDatabase = [
     category: "Worship",
     verses: [
       "Stand up! Stand up for Jesus,\nYe soldiers of the cross!\nLift high His royal banner,\nIt must not suffer loss.\nFrom victory unto victory\nHis army shall He lead,\nTill every foe is vanquished,\nAnd Christ is Lord indeed.",
+      "Stand up! Stand up for Jesus,\nThe trumpet call obey;\nForth to the mighty conflict\nIn this His glorious day.\nYe that are His now serve Him\nAgainst unnumbered foes;\nLet courage rise with danger,\nAnd strength to strength oppose.",
       "Stand up! Stand up for Jesus,\nStand in His strength alone!\nThe arm of flesh will fail you;\nYe dare not trust your own.\nPut on the Gospel armour,\nAnd, watching unto prayer,\nWhere duty calls, or danger,\nBe never wanting there.",
-      "Stand up! Stand up for Jesus,\nThe strife will not be long!\nThis day the noise of battle,\nThe next the victor's song;\nTo him that overcometh\nA crown of life shall be;\nHe, with the King of Glory,\nShall reign eternally."
+      "Stand up! Stand up for Jesus,\nThe strife will not be long!\nThis day the noise of battle,\nThe next the victor's song;\nTo him that overcometh\nA crown of life shall be;\nHe, with the King of Glory,\nShall reign eternally.\n\n"
     ],
     youtubeId: "wgRudMZvrjA",
-    firstLine: "Stand up! Stand up for Jesus"
+    firstLine: "Stand up! Stand up for Jesus",
+    bio: "George Duffield Jr. was a 19th-century American pastor and hymn writer. 'Stand Up for Jesus' is a powerful call to Christian action and commitment, encouraging believers to stand firm in their faith."
   },
   {
     id: 16,
@@ -225,7 +253,8 @@ const hymnsDatabase = [
       "To our bountiful Father above\nWe will offer our tribute of praise\nFor the glorious gift of His love\nAnd the blessings that hallow our days.\n\n"
     ],
     youtubeId: "Ciw3d6oUYAU",
-    firstLine: "There's a land that is fairer than day"
+    firstLine: "There's a land that is fairer than day",
+    bio: "Sanford F. Bennett was a 19th-century American hymn writer. 'Sweet By and By' is a beloved hymn that expresses hope and anticipation for the eternal life promised to believers, emphasizing the joy of reunion in heaven."
   },
   {
     id: 17,
@@ -238,7 +267,8 @@ const hymnsDatabase = [
       "Perfect submission, all is at rest,\nI in my Saviour am happy and blest;\nWatching and waiting, looking above,\nFilled with His goodness, lost in His love.\n\n"
     ],
     youtubeId: "ZaAUugfVVO8",
-    firstLine: "Blessed assurance—Jesus is mine!"
+    firstLine: "Blessed assurance—Jesus is mine!",
+    bio: "Fanny Crosby, a prolific 19th-century hymn writer, wrote 'Blessed Assurance' to express her deep faith and confidence in Christ. The hymn is one of her most famous works, celebrating the joy of salvation and assurance in Jesus."
   },
   {
     id: 18,
@@ -253,7 +283,8 @@ const hymnsDatabase = [
       "Then in fellowship sweet\nWe will sit at His feet,\nOr we'll walk by His side in the way;\nWhat He says we will do,\nWhere He sends, we will go—\nNever fear, only trust and obey.\n\n"
     ],
     youtubeId: "n4U-yx6cFb0",
-    firstLine: "When we walk with the Lord"
+    firstLine: "When we walk with the Lord",
+    bio: "John H. Sammis was a 19th-century American Presbyterian minister and hymn writer. 'Trust and Obey' is one of his most well-known hymns, emphasizing the importance of faith and obedience in the Christian life."
   },
   {
     id: 19,
@@ -266,7 +297,8 @@ const hymnsDatabase = [
       "Are we weak and heavy-laden,\nCumbered with a load of care?\nPrecious Saviour, still our refuge—\nTake it to the Lord in prayer.\nDo thy friends despise, forsake thee?\nTake it to the Lord in prayer!\nIn His arms He'll take and shield thee,\nThou wilt find a solace there."
     ],
     youtubeId: "LarFhGeE-ac",
-    firstLine: "What a Friend we have in Jesus"
+    firstLine: "What a Friend we have in Jesus",
+    bio: "Joseph M. Scriven was a 19th-century Irish poet and hymn writer. 'What a Friend We Have in Jesus' is one of his most beloved hymns, emphasizing the comfort and solace found in Jesus as a friend and intercessor."
   },
   {
     id: 20,
@@ -280,7 +312,8 @@ const hymnsDatabase = [
       "And Lord, haste the day when my faith shall be sight,\nThe clouds be rolled back as a scroll;\nThe trump shall resound, and the Lord shall descend:\nEven so—it is well with my soul."
     ],
     youtubeId: "ZYrL9ea1XUg",
-    firstLine: "When peace like a river attendeth my way"
+    firstLine: "When peace like a river attendeth my way",
+    bio: "Horatio G. Spafford was a 19th-century American lawyer and Presbyterian church elder. 'It Is Well With My Soul' was written after a series of personal tragedies, expressing profound faith and peace in the midst of sorrow."
   },
   {
     id: 21,
@@ -438,6 +471,9 @@ const categories = {
 };
 
 const SacredHymnsApp = () => {
+  const [showAppInfoModal, setShowAppInfoModal] = useState(false);
+  const [showHymnModal, setShowHymnModal] = useState(false);
+  const [showNumberGridModal, setShowNumberGridModal] = useState(false);
   const [currentView, setCurrentView] = useState('home');
   const [selectedHymn, setSelectedHymn] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -452,13 +488,16 @@ const SacredHymnsApp = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [autoScroll, setAutoScroll] = useState(false);
   const [presentationMode, setPresentationMode] = useState(false);
-  const [showNumberGrid, setShowNumberGrid] = useState(false);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [playlists, setPlaylists] = useState([]);
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
   const [currentPlaylist, setCurrentPlaylist] = useState(null);
   const [showYoutubePlayer, setShowYoutubePlayer] = useState(false);
+  const [showHymnInfo, setShowHymnInfo] = useState(false);
   const playerRef = useRef(null);
   const scrollIntervalRef = useRef(null);
+  const scrollPositionRef = useRef(0);
+
   const AnimatedBackground = () => {
     return (
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -628,14 +667,16 @@ const SacredHymnsApp = () => {
   };
 
   const openHymn = (hymn) => {
+    scrollPositionRef.current = window.scrollY;
     setSelectedHymn(hymn);
     setCurrentView('hymn');
     addToRecentlyViewed(hymn);
     setIsPlaying(false);
     setCurrentTime(0);
     setDuration(0);
-    setShowYoutubePlayer(false); // Reset video view when hymn changes
+    setShowYoutubePlayer(false);
   };
+
 
 
   const togglePlay = () => {
@@ -707,10 +748,19 @@ const SacredHymnsApp = () => {
               </button>
             )}
             <div className="flex items-center space-x-2">
-              <Cross className="h-8 w-8 text-blue-600" />
-              <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              <button
+                onClick={() => setShowNumberGridModal(true)}
+                className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium shadow-sm transition duration-300 ease-in-out transform hover:scale-105 ${darkMode ? 'bg-gray-700 text-white hover:bg-blue-700' : 'bg-blue-100 text-blue-800 hover:bg-blue-200'}`}
+              >
+                <Grid className="h-5 w-5" />
+              </button>
+              <h1
+                onClick={() => setShowAppInfoModal(true)}
+                className={`text-xl font-bold cursor-pointer hover:underline ${darkMode ? 'text-white' : 'text-gray-900'}`}
+              >
                 SING UNTO THE LORD
               </h1>
+
             </div>
           </div>
 
@@ -785,51 +835,13 @@ const SacredHymnsApp = () => {
     </div>
   );
 
-  const NumberGrid = () => (
-    <div className="mb-6">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-          Quick Number Access
-        </h3>
-        <button
-          onClick={() => setShowNumberGrid(!showNumberGrid)}
-          className={`flex items-center space-x-2 px-3 py-1 rounded-lg ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
-            } transition-colors`}
-        >
-          <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-            {showNumberGrid ? 'Hide' : 'Show'} Grid
-          </span>
-          {showNumberGrid ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-        </button>
-      </div>
-
-      {showNumberGrid && (
-        <div className="grid grid-cols-5 sm:grid-cols-10 gap-2">
-          {hymnsDatabase.map(hymn => (
-            <button
-              key={hymn.id}
-              onClick={() => openHymn(hymn)}
-              className={`p-3 rounded-lg border-2 transition-all hover:scale-105 ${darkMode
-                ? 'bg-gray-800 border-gray-600 hover:border-blue-500 text-white'
-                : 'bg-white border-gray-200 hover:border-blue-500 text-gray-900'
-                }`}
-            >
-              <div className="text-lg font-bold text-blue-600">{hymn.id}</div>
-              <div className="text-xs mt-1 opacity-75 truncate">{hymn.title}</div>
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-
   const HymnCard = ({ hymn }) => {
     const CategoryIcon = categories[hymn.category]?.icon || Music;
 
     return (
       <div
         onClick={() => openHymn(hymn)}
-        className={`p-6 rounded-lg border-2 cursor-pointer transition-all hover:scale-105 hover:shadow-lg ${darkMode
+        className={`p-6 rounded-lg border-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg ${darkMode
           ? 'bg-gray-800 border-gray-600 hover:border-blue-500'
           : 'bg-white border-gray-200 hover:border-blue-500'
           }`}
@@ -877,7 +889,7 @@ const SacredHymnsApp = () => {
             {isOnline && (
               <div className="flex items-center space-x-1 text-green-600">
                 <Volume2 className="h-4 w-4" />
-                <span className="text-xs">Audio Available</span>
+                <span className="text-xs">Video Available</span>
               </div>
             )}
           </div>
@@ -901,7 +913,12 @@ const SacredHymnsApp = () => {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-4">
                 <button
-                  onClick={() => setCurrentView('home')}
+                  onClick={() => {
+                    setCurrentView('home');
+                    setTimeout(() => {
+                      window.scrollTo(0, scrollPositionRef.current);
+                    }, 0);
+                  }}
                   className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'} transition-colors`}
                 >
                   <ArrowLeft className="h-5 w-5" />
@@ -916,6 +933,17 @@ const SacredHymnsApp = () => {
                   <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                     by {hymn.author}
                   </p>
+                  {showHymnInfo && (
+                    <div className={`mt-4 p-4 rounded-lg shadow-lg ${darkMode ? 'bg-gray-800 text-gray-100' : 'bg-blue-50 text-gray-900'}`}>
+                      <h3 className="text-xl font-bold mb-2">About This Hymn</h3>
+                      <p><strong>Title:</strong> {hymn.title}</p>
+                      <p><strong>Author:</strong> {hymn.author}</p>
+                      <p><strong>Category:</strong> {hymn.category}</p>
+                      <p><strong>First Line:</strong> {hymn.firstLine}</p>
+                      {/* Optionally more info */}
+                    </div>
+                  )}
+
                 </div>
               </div>
 
@@ -932,11 +960,10 @@ const SacredHymnsApp = () => {
                   <Heart className={`h-6 w-6 ${favorites.has(hymn.id) ? 'fill-current' : ''}`} />
                 </button>
                 <button
-                  onClick={() => setPresentationMode(true)}
-                  className={`p-3 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
-                    }`}
+                  onClick={() => setShowHymnModal(true)}
+                  className={`p-3 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
                 >
-                  <Settings className="h-6 w-6" />
+                  <Info className="h-6 w-6" />
                 </button>
               </div>
             </div>
@@ -982,7 +1009,7 @@ const SacredHymnsApp = () => {
                     onClick={() => setShowYoutubePlayer(true)}
                     className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
                   >
-                    ▶ Watch Video
+                    ▶ Show Video
                   </button>
                 ) : (
                   <div className="bg-gray-100 rounded-lg p-4">
@@ -1076,10 +1103,15 @@ const SacredHymnsApp = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex items-center space-x-2 mb-6">
           <button
-            onClick={() => setCurrentView('home')}
-            className="text-blue-600 hover:underline"
+            onClick={() => {
+              setCurrentView('home');
+              setTimeout(() => {
+                window.scrollTo(0, scrollPositionRef.current);
+              }, 0);
+            }}
+            className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'} transition-colors`}
           >
-            ← Back to Home
+            Back to Home
           </button>
           <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Recently Viewed Hymns
@@ -1189,6 +1221,7 @@ const SacredHymnsApp = () => {
     );
   };
 
+
   const HomeView = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="text-center mb-8">
@@ -1202,14 +1235,14 @@ const SacredHymnsApp = () => {
 
       <SearchBar />
       <CategoryFilter />
-      <NumberGrid />
+
       <div className="mb-8">
         <button
           onClick={() => setCurrentView('recent')}
           className={`flex items-center space-x-2 text-blue-600 hover:underline`}
         >
           <Clock className="h-5 w-5" />
-          <span>View Recently Viewed Hymns</span>
+          <span>Recently Viewed Hymns</span>
         </button>
       </div>
       <FavoriteHymns />
@@ -1259,6 +1292,165 @@ const SacredHymnsApp = () => {
       {currentView === 'hymn' && <HymnView />}
       {currentView === 'recent' && <RecentlyViewedView />}
       {currentView === 'favorites' && <FavoriteHymnsView />}
+
+      {showHymnModal && selectedHymn && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className={`w-full max-w-lg mx-auto p-6 rounded-lg shadow-lg transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-2xl font-bold">About "{selectedHymn.title}"</h2>
+              <button onClick={() => setShowHymnModal(false)} className={`p-3 rounded-full transition duration-300 ease-in-out transform hover:scale-110 ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+              >
+                ✕
+              </button>
+            </div>
+
+            <p><strong>Author:</strong> {selectedHymn.author}</p>
+            <p><strong>Category:</strong> {selectedHymn.category}</p>
+            <p><strong>First Line:</strong> {selectedHymn.firstLine}</p>
+
+            {selectedHymn.bio && (
+              <div className="mt-4">
+                <h3 className="text-lg font-semibold mb-1">Composer Biography</h3>
+                <p className="text-sm leading-relaxed">{selectedHymn.bio}</p>
+              </div>
+            )}
+
+            <div className="mt-6 text-right">
+              <button
+                onClick={() => setShowHymnModal(false)}
+                className={`p-3 rounded-full transition duration-300 ease-in-out transform hover:scale-110 ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showNumberGridModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+          <div className={`w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg p-6 shadow-xl transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+
+            {/* Modal Header */}
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-2xl font-bold">Quick Access Hymns</h2>
+              <button
+                onClick={() => setShowNumberGridModal(false)}
+                className="text-2xl font-bold px-2 hover:text-red-500"
+              >
+                ✕
+              </button>
+            </div>
+
+
+            <div className="grid grid-cols-5 sm:grid-cols-10 gap-2">
+              {hymnsDatabase.map(hymn => (
+                <button
+                  key={hymn.id}
+                  onClick={() => {
+                    openHymn(hymn);
+                    setShowNumberGridModal(false); // auto-close after selection
+                  }}
+                  className={`p-6 rounded-lg border-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg ${darkMode
+                    ? 'bg-gray-800 border-gray-600 hover:border-blue-500'
+                    : 'bg-white border-gray-200 hover:border-blue-500'
+                    }`}
+                >
+                  <div className="text-lg font-bold text-blue-600">{hymn.id}</div>
+                  <div className="text-xs mt-1 opacity-75 truncate">{hymn.title}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showAppInfoModal && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className={`w-full max-w-lg mx-auto h-[90vh] p-6 rounded-lg shadow-xl overflow-y-auto transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+
+            {/* Close Button */}
+            <div className="flex justify-between items-center mb-4 sticky top-0 bg-inherit z-10">
+              <h2 className="text-2xl font-bold">About This App</h2>
+              <button
+                onClick={() => setShowAppInfoModal(false)}
+                className="text-2xl font-bold px-2 hover:text-red-500"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Avatar */}
+            <div className="flex justify-center mb-4">
+              <img
+                src="logo192.png"
+                alt="App Icon"
+                className="w-24 h-24 rounded-full border-4 border-blue-500 shadow-md object-cover"
+              />
+            </div>
+
+            {/* Info */}
+            <div className="space-y-4 text-base leading-relaxed text-center">
+              <p>
+                <strong>SING UNTO THE LORD</strong> is a modern hymnbook app designed for seamless worship and quick access to timeless hymns.
+              </p>
+              <p>
+                Developed by <strong>Josophat Makawa</strong> for the <strong>University of Malawi Church of Christ</strong> and Christian worshipers worldwide.
+              </p>
+              <p>
+                <strong>Version:</strong> 1.0.0<br />
+                <strong>Built With:</strong> React + TailwindCSS
+              </p>
+              <p className="font-semibold">For Feedback, Suggestions and Support, contact the developer:</p>
+
+              {/* Social Links with Icons */}
+              <div className="flex flex-wrap justify-center gap-4 mt-4 text-blue-500">
+                <a href="https://web.facebook.com/josophat.chifundo.makawa" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                  <FontAwesomeIcon icon={faFacebook} />
+
+                </a>
+                <a href="https://www.instagram.com/kiziojosh/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                  <FontAwesomeIcon icon={faInstagram} />
+
+                </a>
+                <a href="https://www.linkedin.com/in/josophat-makawa-abaa21366/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                  <FontAwesomeIcon icon={faLinkedin} />
+
+                </a>
+                <a href="https://github.com/KizioTech" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                  <FontAwesomeIcon icon={faGithub} />
+
+                </a>
+                <a
+                  href="https://wa.me/265999978828"  // Replace with your actual WhatsApp number
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:underline"
+                >
+                  <FontAwesomeIcon icon={faWhatsapp} />
+                </a>
+
+                <a href="https://t.me/KizioJosh" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                  <FontAwesomeIcon icon={faTelegram} />
+
+                </a>
+              </div>
+
+            </div>
+
+            {/* Close */}
+            <div className="mt-6 text-right">
+              <button
+                onClick={() => setShowAppInfoModal(false)}
+                className={`px-4 py-2 rounded ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-100 text-blue-800 hover:bg-blue-200'}`}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
 
       {/* Service Worker Registration */}
       {typeof window !== 'undefined' && (
