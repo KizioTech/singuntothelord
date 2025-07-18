@@ -458,22 +458,284 @@ const hymnsDatabase = [
       "I am redeemed no more to die, never to say \"goodbye,\"\nHe gave me a song, a wonderful song;\nAnd some of these days in that fair land, sing with the chorus grand,\nHe gave me a song, a wonderful song."
     ],
     youtubeId: "hD6qKikbaL4",
-    firstLine: "He took my burdens all away"
+    firstLine: "He took my burdens all away",
+    bio: "Lizzie De Armond was a 20th-century American hymn writer known for her joyful and uplifting lyrics. 'He Gave Me A Song' reflects her deep faith and the joy of salvation, celebrating the song of praise given by God."
   },
   {
-  id: 32,
-  title: "When the Roll Is Called Up Yonder",
-  author: "James M. Black",
-  category: "Assurance",
-  verses: [
-    "When the trumpet of the Lord shall sound and time shall be no more,\nAnd the morning breaks, eternal, bright and fair;\nWhen the saved of earth shall gather over on the other shore,\nAnd the roll is called up yonder, I'll be there.\n\nWhen the roll is called up yonder,\nWhen the roll is called up yonder,\nWhen the roll is called up yonder,\nWhen the roll is called up yonder, I'll be there.",
-    "On that bright and cloudless morning when the dead in Christ shall rise,\nAnd the glory of his resurrection share;\nWhen his chosen ones shall gather to their home beyond the skies,\nAnd the roll is called up yonder, I'll be there.",
-    "Let us labor for the Master from the dawn till setting sun;\nLet us talk of all his wondrous love and care.\nThen when all of life is over and our work on earth is done,\nAnd the roll is called up yonder, I'll be there.\n\n"
-  ],
-  youtubeId: "RD9QfQoUtuV5w",
-  firstLine: "When the trumpet of the Lord shall sound",
-  bio: "James Milton Black (1856–1938) was an American hymnwriter and Methodist lay leader. He wrote this hymn in 1893 after a Sunday school student's absence prompted him to reflect on the heavenly roll call. The hymn became one of the most popular gospel songs of the 20th century."
-}
+    id: 32,
+    title: "When the Roll Is Called Up Yonder",
+    author: "James M. Black",
+    category: "Assurance",
+    verses: [
+      "When the trumpet of the Lord shall sound and time shall be no more,\nAnd the morning breaks, eternal, bright and fair;\nWhen the saved of earth shall gather over on the other shore,\nAnd the roll is called up yonder, I'll be there.\n\nWhen the roll is called up yonder,\nWhen the roll is called up yonder,\nWhen the roll is called up yonder,\nWhen the roll is called up yonder, I'll be there.",
+      "On that bright and cloudless morning when the dead in Christ shall rise,\nAnd the glory of his resurrection share;\nWhen his chosen ones shall gather to their home beyond the skies,\nAnd the roll is called up yonder, I'll be there.",
+      "Let us labor for the Master from the dawn till setting sun;\nLet us talk of all his wondrous love and care.\nThen when all of life is over and our work on earth is done,\nAnd the roll is called up yonder, I'll be there.\n\n"
+    ],
+    youtubeId: "9QfQoUtuV5w",
+    firstLine: "When the trumpet of the Lord shall sound",
+    bio: "James Milton Black (1856–1938) was an American hymnwriter and Methodist lay leader. He wrote this hymn in 1893 after a Sunday school student's absence prompted him to reflect on the heavenly roll call. The hymn became one of the most popular gospel songs of the 20th century."
+  },
+  {
+    "id": 33,
+    "title": "Lily of the Valley",
+    "author": "Charles W. Fry",
+    "category": "Assurance",
+    "verses": [
+      "I have found a friend in Jesus,\nHe's ev'rything to me,\nHe's the fairest of ten thousand to my soul;\nThe \"Lily of the Valley,\" in Him alone I see,\nall I need to cleanse and make me fully whole.\nIn sorrow He's my comfort, in trouble He's my stay,\nHe tells me ev'ry care on Him to roll;\nHe's the \"Lily of the Valley, the Bright and Morning Star,\"\nHe's the fairest of ten thousand to my soul.",
+      "He all my grief has taken, and all my sorrows borne,\nin temptation He's my strong and mighty tow'r;\nI have all for Him forsaken, and all my idols torn\nfrom my heart, and now He keeps me by His pow'r.\nThough all the world forsake me, and Satan tempt me sore,\nthrough Jesus I shall safely reach the goal;\nHe's the \"Lily of the Valley, the Bright and Morning Star,\"\nHe's the fairest of ten thousand to my soul.",
+      "He will never, never leave me, nor yet forsake me here,\nwhile I live by faith and do His blessed will;\nA wall of fire about me, I've nothing now to fear,\nwith His manna He my hungry soul shall fill.\nThen sweeping up to glory, to see His blessed face,\nwhere rivers of delight shall ever roll;\nHe's the \"Lily of the Valley, the Bright and Morning Star,\"\nHe's the fairest of ten thousand to my soul."
+    ],
+    "youtubeId": "PaLLWd-BBpo",
+    "firstLine": "I have found a friend in Jesus",
+    "bio": "Charles William Fry (1837-1882) was a British Salvation Army officer and musician. He composed this beloved hymn in 1881 while leading the Salvation Army band. The hymn beautifully expresses Christ's comfort and sufficiency using imagery from Song of Solomon 2:1."
+  },
+  {
+    "id": 34,
+    "title": "Great Is Thy Faithfulness",
+    "author": "Thomas Chisholm",
+    "category": "Faithfulness",
+    "verses": [
+      "Great is Thy faithfulness, O God my Father\nThere is no shadow of turning with Thee\nThou changest not, Thy compassions, they fail not\nAs Thou hast been, Thou forever will be\n\nGreat is Thy faithfulness!\nGreat is Thy faithfulness!\nMorning by morning new mercies I see\nAll I have needed Thy hand hath provided\nGreat is Thy faithfulness, Lord, unto me!",
+      "Summer and winter and springtime and harvest\nSun, moon and stars in their courses above\nJoin with all nature in manifold witness\nTo Thy great faithfulness, mercy and love",
+      "Pardon for sin and a peace that endureth\nThine own dear presence to cheer and to guide\nStrength for today and bright hope for tomorrow\nBlessings all mine, with ten thousand beside"
+    ],
+    "youtubeId": "Soh9WKhmZa4",
+    "firstLine": "Great is Thy faithfulness, O God my Father",
+    "bio": "Thomas Chisholm was a 20th-century American hymn writer. 'Great Is Thy Faithfulness' (1923) celebrates God's unchanging character, inspired by Lamentations 3:22-23. Though written during financial hardship, it expresses profound trust in God's provision."
+  },
+  {
+    "id": 35,
+    "title": "How Great Thou Art",
+    "author": "Carl Boberg",
+    "category": "Worship",
+    "verses": [
+      "O Lord my God, when I in awesome wonder\nConsider all the worlds Thy hands have made\nI see the stars, I hear the rolling thunder\nThy power throughout the universe displayed\n\nThen sings my soul, my Saviour God to Thee\nHow great Thou art, how great Thou art!",
+      "When through the woods and forest glades I wander\nAnd hear the birds sing sweetly in the trees\nWhen I look down from lofty mountain grandeur\nAnd hear the brook and feel the gentle breeze",
+      "And when I think that God, His Son not sparing\nSent Him to die, I scarce can take it in\nThat on the cross, my burden gladly bearing\nHe bled and died to take away my sin",
+      "When Christ shall come with shout of acclamation\nAnd take me home, what joy shall fill my heart\nThen I shall bow in humble adoration\nAnd there proclaim, 'My God, how great Thou art!'"
+    ],
+    "youtubeId": "BllDD7zpHbg",
+    "firstLine": "O Lord my God, when I in awesome wonder",
+    "bio": "Carl Boberg was a Swedish poet and minister. Originally written in Swedish in 1885 as 'O Store Gud', this hymn gained global popularity through English translations. Its majestic lyrics reflect on creation, redemption, and Christ's return."
+  },
+  {
+    "id": 36,
+    "title": "Holy, Holy, Holy",
+    "author": "Reginald Heber",
+    "category": "Trinity",
+    "verses": [
+      "Holy, holy, holy! Lord God Almighty!\nEarly in the morning our song shall rise to Thee\nHoly, holy, holy! Merciful and mighty!\nGod in three Persons, blessed Trinity!",
+      "Holy, holy, holy! All the saints adore Thee\nCasting down their golden crowns around the glassy sea\nCherubim and seraphim falling down before Thee\nWhich wert, and art, and evermore shalt be",
+      "Holy, holy, holy! Though the darkness hide Thee\nThough the eye of sinful man Thy glory may not see\nOnly Thou art holy; there is none beside Thee\nPerfect in pow'r, in love, and purity",
+      "Holy, holy, holy! Lord God Almighty!\nAll Thy works shall praise Thy name in earth and sky and sea\nHoly, holy, holy! Merciful and mighty!\nGod in three Persons, blessed Trinity!"
+    ],
+    "youtubeId": "lsQQRZaTerE",
+    "firstLine": "Holy, holy, holy! Lord God Almighty!",
+    "bio": "Reginald Heber was an early 19th-century English bishop. Written in 1826, this hymn is considered the standard English-language hymn on the Trinity. Its lyrics draw from Revelation 4:8-11 and emphasize God's supreme holiness."
+  },
+  {
+    "id": 37,
+    "title": "Be Thou My Vision",
+    "author": "Ancient Irish, tr. Mary Byrne",
+    "category": "Devotion",
+    "verses": [
+      "Be Thou my vision, O Lord of my heart\nNaught be all else to me, save that Thou art\nThou my best thought, by day or by night\nWaking or sleeping, Thy presence my light",
+      "Be Thou my wisdom, and Thou my true word\nI ever with Thee and Thou with me, Lord\nThou my great Father, I Thy true son\nThou in me dwelling, and I with Thee one",
+      "Riches I heed not, nor man's empty praise\nThou mine inheritance, now and always\nThou and Thou only, first in my heart\nHigh King of heaven, my treasure Thou art",
+      "High King of heaven, my victory won\nMay I reach heaven's joys, O bright heav'n's Sun\nHeart of my own heart, whatever befall\nStill be my vision, O Ruler of all"
+    ],
+    "youtubeId": "N96n0L8ddM0",
+    "firstLine": "Be Thou my vision, O Lord of my heart",
+    "bio": "This 8th-century Irish hymn was translated by Mary Byrne in 1905 and versified by Eleanor Hull in 1912. Originally 'Rop tú mo Baile', it reflects ancient Celtic Christianity's emphasis on Christ's intimate presence in daily life."
+  },
+  {
+    "id": 38,
+    "title": "The Old Rugged Cross",
+    "author": "George Bennard",
+    "category": "Salvation",
+    "verses": [
+      "On a hill far away stood an old rugged cross\nThe emblem of suffering and shame\nAnd I love that old cross where the dearest and best\nFor a world of lost sinners was slain\n\nSo I'll cherish the old rugged cross\nTill my trophies at last I lay down\nI will cling to the old rugged cross\nAnd exchange it some day for a crown",
+      "O that old rugged cross, so despised by the world\nHas a wondrous attraction for me\nFor the dear Lamb of God left His glory above\nTo bear it to dark Calvary",
+      "In that old rugged cross, stained with blood so divine\nA wondrous beauty I see\nFor 'twas on that old cross Jesus suffered and died\nTo pardon and sanctify me",
+      "To the old rugged cross I will ever be true\nIts shame and reproach gladly bear\nThen He'll call me some day to my home far away\nWhere His glory forever I'll share"
+    ],
+    "youtubeId": "i7v26yrlz5w",
+    "firstLine": "On a hill far away stood an old rugged cross",
+    "bio": "George Bennard was an American evangelist who wrote this hymn in 1913. Inspired by his struggles during ministry, it became one of the most beloved American gospel hymns, emphasizing the paradox of Christ's shameful cross bringing salvation."
+  },
+  {
+    "id": 39,
+    "title": "I Need Thee Every Hour",
+    "author": "Annie Hawks",
+    "category": "Dependence",
+    "verses": [
+      "I need Thee every hour, most gracious Lord\nNo tender voice like Thine can peace afford\n\nI need Thee, O I need Thee\nEvery hour I need Thee\nO bless me now, my Saviour\nI come to Thee",
+      "I need Thee every hour, stay Thou nearby\nTemptations lose their pow'r when Thou art nigh",
+      "I need Thee every hour, in joy or pain\nCome quickly and abide, or life is vain",
+      "I need Thee every hour, teach me Thy will\nAnd Thy rich promises in me fulfill"
+    ],
+    "youtubeId": "K03qGVMdN18",
+    "firstLine": "I need Thee every hour, most gracious Lord",
+    "bio": "Annie Hawks was a 19th-century American homemaker and hymn writer. She composed this hymn in 1872 during routine housework when struck by her constant need for God's presence. The refrain was added by her pastor Robert Lowry."
+  },
+  {
+    "id": 40,
+    "title": "Come, Thou Fount of Every Blessing",
+    "author": "Robert Robinson",
+    "category": "Grace",
+    "verses": [
+      "Come, Thou Fount of every blessing\nTune my heart to sing Thy grace\nStreams of mercy, never ceasing\nCall for songs of loudest praise\nTeach me ever to adore Thee\nMay I still Thy goodness prove\nWhile the hope of endless glory\nFills my heart with joy and love",
+      "Here I raise my Ebenezer\nHither by Thy help I've come\nAnd I hope, by Thy good pleasure\nSafely to arrive at home\nJesus sought me when a stranger\nWandering from the fold of God\nHe, to rescue me from danger\nInterposed His precious blood",
+      "O to grace how great a debtor\nDaily I'm constrained to be\nLet Thy goodness, like a fetter\nBind my wandering heart to Thee\nProne to wander, Lord, I feel it\nProne to leave the God I love\nHere's my heart, O take and seal it\nSeal it for Thy courts above"
+    ],
+    "youtubeId": "llPoc5wAgYQ",
+    "firstLine": "Come, Thou Fount of every blessing",
+    "bio": "Robert Robinson was an 18th-century English dissident minister. Written at age 22 in 1758, this hymn reflects his conversion after hearing George Whitefield preach. The 'Ebenezer' reference comes from 1 Samuel 7:12, meaning 'stone of help'."
+  },
+  {
+    "id": 41,
+    "title": "Victory in Jesus",
+    "author": "E.M. Bartlett",
+    "category": "Victory",
+    "verses": [
+      "I heard an old, old story\nHow a Saviour came from glory\nHow He gave His life on Calvary\nTo save a wretch like me\nI heard about His groaning\nOf His precious blood's atoning\nThen I repented of my sins\nAnd won the victory\n\nO victory in Jesus\nMy Saviour forever\nHe sought me and bought me\nWith His redeeming blood\nHe loved me ere I knew Him\nAnd all my love is due Him\nHe plunged me to victory\nBeneath the cleansing flood",
+      "I heard about His healing\nOf His cleansing pow'r revealing\nHow He made the lame to walk again\nAnd caused the blind to see\nAnd then I cried, 'Dear Jesus\nCome and heal my broken spirit'\nAnd somehow Jesus came and brought\nTo me the victory",
+      "I heard about a mansion\nHe has built for me in glory\nAnd I heard about the streets of gold\nBeyond the crystal sea\nAbout the angels singing\nAnd the old redemption story\nAnd some sweet day I'll sing up there\nThe song of victory"
+    ],
+    "youtubeId": "R3wYarmL6xM",
+    "firstLine": "I heard an old, old story",
+    "bio": "E.M. Bartlett was a 20th-century American gospel songwriter. Written in 1939, this hymn became a Southern gospel standard. Its testimony-style lyrics describe conversion, healing, and the hope of heaven through Christ's victory."
+  },
+  {
+    "id": 42,
+    "title": "Because He Lives",
+    "author": "Bill & Gloria Gaither",
+    "category": "Assurance",
+    "verses": [
+      "God sent His son, they called Him Jesus\nHe came to love, heal and forgive\nHe lived and died to buy my pardon\nAn empty grave is there to prove my Saviour lives\n\nBecause He lives I can face tomorrow\nBecause He lives all fear is gone\nBecause I know He holds the future\nAnd life is worth the living just because He lives",
+      "How sweet to hold a newborn baby\nAnd feel the pride and joy he gives\nBut greater still the calm assurance\nThis child can face uncertain days because He lives",
+      "And then one day I'll cross the river\nI'll fight life's final war with pain\nAnd then as death gives way to victory\nI'll see the lights of glory and I'll know He reigns"
+    ],
+    "youtubeId": "adKzNr6G2os",
+    "firstLine": "God sent His son, they called Him Jesus",
+    "bio": "Bill and Gloria Gaither are influential 20th-century American gospel songwriters. They wrote this hymn in 1971 during personal struggles, including Gloria's difficult pregnancy. It emphasizes Christ's resurrection as the foundation for daily hope."
+  },
+  {
+    "id": 43,
+    "title": "Leaning on the Everlasting Arms",
+    "author": "Elisha Hoffman",
+    "category": "Security",
+    "verses": [
+      "What a fellowship, what a joy divine\nLeaning on the everlasting arms\nWhat a blessedness, what a peace is mine\nLeaning on the everlasting arms\n\nLeaning, leaning\nSafe and secure from all alarms\nLeaning, leaning\nLeaning on the everlasting arms",
+      "O how sweet to walk in this pilgrim way\nLeaning on the everlasting arms\nO how bright the path grows from day to day\nLeaning on the everlasting arms",
+      "What have I to dread, what have I to fear\nLeaning on the everlasting arms\nI have blessed peace with my Lord so near\nLeaning on the everlasting arms"
+    ],
+    "youtubeId": "lneA46frKT4",
+    "firstLine": "What a fellowship, what a joy divine",
+    "bio": "Elisha Hoffman was a 19th-century American hymn writer. Published in 1887 with music by Anthony Showalter, this hymn gained popularity in rural revivals. Its theme of divine security comes from Deuteronomy 33:27 - 'The eternal God is your refuge.'"
+  },
+  {
+    "id": 44,
+    "title": "Just As I Am",
+    "author": "Charlotte Elliott",
+    "category": "Invitation",
+    "verses": [
+      "Just as I am, without one plea\nBut that Thy blood was shed for me\nAnd that Thou bidst me come to Thee\nO Lamb of God, I come, I come",
+      "Just as I am, and waiting not\nTo rid my soul of one dark blot\nTo Thee whose blood can cleanse each spot\nO Lamb of God, I come, I come",
+      "Just as I am, though tossed about\nWith many a conflict, many a doubt\nFightings and fears within, without\nO Lamb of God, I come, I come",
+      "Just as I am, Thou wilt receive\nWilt welcome, pardon, cleanse, relieve\nBecause Thy promise I believe\nO Lamb of God, I come, I come"
+    ],
+    "youtubeId": "XOEtLtpCXP8",
+    "firstLine": "Just as I am, without one plea",
+    "bio": "Charlotte Elliott was a 19th-century English poet. Written in 1835 during a spiritual crisis, this hymn became the signature invitation song for Billy Graham crusades. Its message of coming to Christ without preconditions has made it a global standard."
+  },
+  {
+    "id": 45,
+    "title": "Praise to the Lord, the Almighty",
+    "author": "Joachim Neander",
+    "category": "Praise",
+    "verses": [
+      "Praise to the Lord, the Almighty, the King of creation\nO my soul, praise Him, for He is thy health and salvation\nAll ye who hear, now to His temple draw near\nPraise Him in glad adoration",
+      "Praise to the Lord, who o'er all things so wondrously reigneth\nShelters thee under His wings, yea, so gently sustaineth\nHast thou not seen how thy desires e'er have been\nGranted in what He ordaineth?",
+      "Praise to the Lord, who doth prosper thy work and defend thee\nSurely His goodness and mercy here daily attend thee\nPonder anew what the Almighty can do\nIf with His love He befriend thee"
+    ],
+    "youtubeId": "JVwxHmXHp68",
+    "firstLine": "Praise to the Lord, the Almighty, the King of creation",
+    "bio": "Joachim Neander was a 17th-century German Reformed teacher. Written in 1680, this hymn adapts Psalms 103 and 150. Neander often wrote in a valley near Düsseldorf now named Neanderthal, where the famous fossils were later discovered."
+  },
+  {
+    "id": 46,
+    "title": "A Mighty Fortress Is Our God",
+    "author": "Martin Luther",
+    "category": "Reformation",
+    "verses": [
+      "A mighty fortress is our God\nA bulwark never failing\nOur helper He amid the flood\nOf mortal ills prevailing\nFor still our ancient foe\nDoth seek to work us woe\nHis craft and pow'r are great\nAnd armed with cruel hate\nOn earth is not his equal",
+      "Did we in our own strength confide\nOur striving would be losing\nWere not the right man on our side\nThe man of God's own choosing\nDost ask who that may be?\nChrist Jesus, it is He\nLord Sabaoth His name\nFrom age to age the same\nAnd He must win the battle",
+      "And though this world with devils filled\nShould threaten to undo us\nWe will not fear for God hath willed\nHis truth to triumph through us\nThe prince of darkness grim\nWe tremble not for him\nHis rage we can endure\nFor lo, his doom is sure\nOne little word shall fell him",
+      "That word above all earthly pow'rs\nNo thanks to them abideth\nThe Spirit and the gifts are ours\nThrough Him who with us sideth\nLet goods and kindred go\nThis mortal life also\nThe body they may kill\nGod's truth abideth still\nHis kingdom is forever"
+    ],
+    "youtubeId": "rNXxkVuwxY0",
+    "firstLine": "A mighty fortress is our God",
+    "bio": "Martin Luther was the 16th-century German Reformer. Based on Psalm 46, this hymn (c. 1529) became the battle cry of the Protestant Reformation. Its powerful lyrics declare God's protection against spiritual and earthly enemies."
+  },
+  {
+    "id": 47,
+    "title": "Abide With Me",
+    "author": "Henry Lyte",
+    "category": "Comfort",
+    "verses": [
+      "Abide with me: fast falls the eventide\nThe darkness deepens; Lord, with me abide\nWhen other helpers fail and comforts flee\nHelp of the helpless, O abide with me",
+      "Swift to its close ebbs out life's little day\nEarth's joys grow dim, its glories pass away\nChange and decay in all around I see\nO Thou who changest not, abide with me",
+      "I need Thy presence every passing hour\nWhat but Thy grace can foil the tempter's pow'r?\nWho like Thyself my guide and stay can be?\nThrough cloud and sunshine, Lord, abide with me",
+      "Hold Thou Thy cross before my closing eyes\nShine through the gloom and point me to the skies\nHeav'n's morning breaks and earth's vain shadows flee\nIn life, in death, O Lord, abide with me"
+    ],
+    "youtubeId": "1wS0o7HMJiQ",
+    "firstLine": "Abide with me: fast falls the eventide",
+    "bio": "Henry Lyte was a 19th-century Anglican priest. Written in 1847 as he lay dying of tuberculosis, this hymn has been sung at British royal events and global memorial services. Its evening imagery poignantly expresses trust in Christ's constant presence."
+  },
+  {
+    "id": 48,
+    "title": "Shall We Gather at the River",
+    "author": "Robert Lowry",
+    "category": "Hope",
+    "verses": [
+      "Shall we gather at the river\nWhere bright angel feet have trod\nWith its crystal tide forever\nFlowing by the throne of God?\n\nYes, we'll gather at the river\nThe beautiful, the beautiful river\nGather with the saints at the river\nThat flows by the throne of God",
+      "On the margin of the river\nWashing up its silver spray\nWe will walk and worship ever\nAll the happy golden day",
+      "Ere we reach the shining river\nLay we ev'ry burden down\nGrace our spirits will deliver\nAnd provide a robe and crown",
+      "Soon we'll reach the shining river\nSoon our pilgrimage will cease\nSoon our happy hearts will quiver\nWith the melody of peace"
+    ],
+    "youtubeId": "vSQD0Bz8sWI",
+    "firstLine": "Shall we gather at the river",
+    "bio": "Robert Lowry was a 19th-century American Baptist minister. Inspired by Revelation 22:1, he wrote both words and music in 1864 during a heatwave. This hymn became particularly popular in camp meetings and outdoor revivals."
+  },
+  {
+    "id": 49,
+    "title": "In the Garden",
+    "author": "C. Austin Miles",
+    "category": "Intimacy",
+    "verses": [
+      "I come to the garden alone\nWhile the dew is still on the roses\nAnd the voice I hear falling on my ear\nThe Son of God discloses\n\nAnd He walks with me\nAnd He talks with me\nAnd He tells me I am His own\nAnd the joy we share as we tarry there\nNone other has ever known",
+      "He speaks, and the sound of His voice\nIs so sweet the birds hush their singing\nAnd the melody that He gave to me\nWithin my heart is ringing",
+      "I'd stay in the garden with Him\nThough the night around me be falling\nBut He bids me go; through the voice of woe\nHis voice to me is calling"
+    ],
+    "youtubeId": "i9LxvTZy5gE",
+    "firstLine": "I come to the garden alone",
+    "bio": "C. Austin Miles was a 20th-century American pharmacist and hymn writer. Claiming divine inspiration, he wrote this hymn in 1912 after meditating on Mary Magdalene's encounter with the risen Christ (John 20). Its personal devotion style made it hugely popular."
+  },
+  {
+    "id": 50,
+    "title": "Turn Your Eyes Upon Jesus",
+    "author": "Helen Lemmel",
+    "category": "Focus",
+    "verses": [
+      "O soul, are you weary and troubled?\nNo light in the darkness you see?\nThere's light for a look at the Saviour\nAnd life more abundant and free\n\nTurn your eyes upon Jesus\nLook full in His wonderful face\nAnd the things of earth will grow strangely dim\nIn the light of His glory and grace",
+      "Through death into life everlasting\nHe passed, and we follow Him there\nO'er us sin no more hath dominion\nFor more than conqu'rors we are!",
+      "His word shall not fail you—He promised\nBelieve Him, and all will be well\nThen go to a world that is dying\nHis perfect salvation to tell!"
+    ],
+    "youtubeId": "POyfmQ-hl24",
+    "firstLine": "O soul, are you weary and troubled?",
+    "bio": "Helen Lemmel was a 20th-century British-American hymn writer. Inspired by a tract titled 'Focused' in 1918, she wrote this hymn during a period of personal crisis and blindness. Its call to Christ-centered perspective remains profoundly relevant."
+  }
 ];
 
 const categories = {
@@ -577,7 +839,9 @@ const SacredHymnsApp = () => {
         }
       `}</style>
       </div>
+
     );
+
   };
 
   // Initialize component
@@ -728,24 +992,6 @@ const SacredHymnsApp = () => {
     setAutoScroll(!autoScroll);
   };
 
-  const createPlaylist = (name) => {
-    const newPlaylist = {
-      id: Date.now(),
-      name,
-      hymns: []
-    };
-    setPlaylists([...playlists, newPlaylist]);
-    return newPlaylist;
-  };
-
-  const addToPlaylist = (playlistId, hymnId) => {
-    setPlaylists(playlists.map(playlist =>
-      playlist.id === playlistId
-        ? { ...playlist, hymns: [...playlist.hymns, hymnId] }
-        : playlist
-    ));
-  };
-
   const NavigationHeader = () => (
     <header className={`sticky top-0 z-50 ${darkMode ? 'bg-gray-900' : 'bg-white'} border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'} shadow-sm`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -772,14 +1018,17 @@ const SacredHymnsApp = () => {
               >
                 SING UNTO THE LORD
               </h1>
+              <button
+                  onClick={() => setShowAppInfoModal(true)}
+                  className={`p-3 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+                >
+                  <Info className="h-6 w-6" />
+                </button>
 
             </div>
           </div>
 
           <div className="flex items-center space-x-2">
-            <div className={`text-sm px-2 py-1 rounded-full ${darkMode ? 'bg-gray-800 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
-              {hymnsDatabase.length} hymns
-            </div>
             {!isOnline && (
               <span className="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">
                 Offline
@@ -924,7 +1173,7 @@ const SacredHymnsApp = () => {
           <div className="max-w-4xl mx-auto px-4 py-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-4">
-                
+
                 <div className="text-3xl font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-lg">
                   {hymn.id}
                 </div>
@@ -1039,7 +1288,7 @@ const SacredHymnsApp = () => {
 
 
             {/* Hymn Verses */}
-            <div className="space-y-8">
+            <div className="space-y-8 pb-16">
               {hymn.verses.map((verse, index) => (
                 <div key={index} className="verse">
                   <div className={`text-sm font-semibold mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -1054,6 +1303,7 @@ const SacredHymnsApp = () => {
                 </div>
               ))}
             </div>
+
           </div>
         )}
 
@@ -1157,26 +1407,6 @@ const SacredHymnsApp = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {favoriteHymns.map(hymn => (
             <HymnCard key={`favorite-${hymn.id}`} hymn={hymn} />
-          ))}
-        </div>
-      </div>
-    );
-  };
-
-  const RecentlyViewed = () => {
-    if (recentlyViewed.length === 0) return null;
-
-    return (
-      <div className="mb-8">
-        <div className="flex items-center space-x-2 mb-4">
-          <Clock className="h-5 w-5 text-gray-500" />
-          <h2 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Recently Viewed
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {recentlyViewed.map(hymn => (
-            <HymnCard key={`recent-${hymn.id}`} hymn={hymn} />
           ))}
         </div>
       </div>
@@ -1328,6 +1558,14 @@ const SacredHymnsApp = () => {
           </div>
         </div>
       )}
+      <footer
+        className={`fixed bottom-0 inset-x-0 z-50 text-center text-xs font-bold py-2 border-t
+    ${darkMode
+            ? 'bg-gray-900 text-gray-200 border-gray-700'
+            : 'bg-white text-black border-gray-200'}`}
+      >
+        © 2025 UNIMA Church of Christ. All rights reserved.
+      </footer>
 
       {showNumberGridModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
