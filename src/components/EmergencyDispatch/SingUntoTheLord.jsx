@@ -459,7 +459,21 @@ const hymnsDatabase = [
     ],
     youtubeId: "hD6qKikbaL4",
     firstLine: "He took my burdens all away"
-  }
+  },
+  {
+  id: 32,
+  title: "When the Roll Is Called Up Yonder",
+  author: "James M. Black",
+  category: "Assurance",
+  verses: [
+    "When the trumpet of the Lord shall sound and time shall be no more,\nAnd the morning breaks, eternal, bright and fair;\nWhen the saved of earth shall gather over on the other shore,\nAnd the roll is called up yonder, I'll be there.\n\nWhen the roll is called up yonder,\nWhen the roll is called up yonder,\nWhen the roll is called up yonder,\nWhen the roll is called up yonder, I'll be there.",
+    "On that bright and cloudless morning when the dead in Christ shall rise,\nAnd the glory of his resurrection share;\nWhen his chosen ones shall gather to their home beyond the skies,\nAnd the roll is called up yonder, I'll be there.",
+    "Let us labor for the Master from the dawn till setting sun;\nLet us talk of all his wondrous love and care.\nThen when all of life is over and our work on earth is done,\nAnd the roll is called up yonder, I'll be there.\n\n"
+  ],
+  youtubeId: "RD9QfQoUtuV5w",
+  firstLine: "When the trumpet of the Lord shall sound",
+  bio: "James Milton Black (1856–1938) was an American hymnwriter and Methodist lay leader. He wrote this hymn in 1893 after a Sunday school student's absence prompted him to reflect on the heavenly roll call. The hymn became one of the most popular gospel songs of the 20th century."
+}
 ];
 
 const categories = {
@@ -488,10 +502,8 @@ const SacredHymnsApp = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [autoScroll, setAutoScroll] = useState(false);
   const [presentationMode, setPresentationMode] = useState(false);
-  const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [playlists, setPlaylists] = useState([]);
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
-  const [currentPlaylist, setCurrentPlaylist] = useState(null);
   const [showYoutubePlayer, setShowYoutubePlayer] = useState(false);
   const [showHymnInfo, setShowHymnInfo] = useState(false);
   const playerRef = useRef(null);
@@ -912,17 +924,7 @@ const SacredHymnsApp = () => {
           <div className="max-w-4xl mx-auto px-4 py-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-4">
-                <button
-                  onClick={() => {
-                    setCurrentView('home');
-                    setTimeout(() => {
-                      window.scrollTo(0, scrollPositionRef.current);
-                    }, 0);
-                  }}
-                  className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'} transition-colors`}
-                >
-                  <ArrowLeft className="h-5 w-5" />
-                </button>
+                
                 <div className="text-3xl font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-lg">
                   {hymn.id}
                 </div>
