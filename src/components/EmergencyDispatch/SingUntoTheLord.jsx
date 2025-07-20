@@ -852,7 +852,7 @@ const SacredHymnsApp = () => {
   const [backgroundImage, setBackgroundImage] = useState('');
 
   useEffect(() => {
-    const images = Array.from({ length: 11 }, (_, i) => `/public/backgrounds/img${i + 1}.jpg`);
+    const images = Array.from({ length: 11 }, (_, i) => `/backgrounds/img${i + 1}.jpg`);
     const randomIndex = Math.floor(Math.random() * images.length);
     setBackgroundImage(images[randomIndex]);
   }, []);
