@@ -1537,7 +1537,7 @@ const SacredHymnsApp = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          opacity: 0.1,
+          opacity: 0.5,
           zIndex: -1,
         }}
       />
