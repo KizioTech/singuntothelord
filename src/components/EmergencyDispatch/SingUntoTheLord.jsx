@@ -2,7 +2,7 @@
 import { Cloud } from 'lucide-react';
 import { Info } from 'lucide-react';
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Search, Heart, Play, Pause, Volume2, Grid, List, Moon, Sun, Home, ArrowLeft, Settings, ChevronDown, ChevronUp, Music, Clock, Star, Book, Cross, Gift, Sunrise } from 'lucide-react';
+import { Search, Heart, Play, Pause, Volume2, Grid, List, Moon, Sun, Home, ArrowLeft, Settings, ChevronDown, ChevronUp, Music, Clock, Star, Book, Cross, Gift, Sunrise, Shield } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
@@ -743,8 +743,67 @@ const categories = {
   "Christmas": { icon: Gift, color: "text-red-600" },
   "Easter": { icon: Sunrise, color: "text-yellow-600" },
   "Worship": { icon: Cross, color: "text-purple-600" },
-  "Praise": { icon: Music, color: "text-green-600" }
+  "Praise": { icon: Music, color: "text-green-600" },
+  "Assuarance": { icon: Shield, color: "text-orange-600" },
+  "Faith": { icon: Heart, color: "text-pink-600" },
 };
+const greetingsByTime = {
+  morning: [
+    {
+      message: "Good morning! It's a beautiful day to sing.",
+      verse: "“Let everything that has breath praise the Lord.” – Psalm 150:6"
+    },
+    {
+      message: "Rise and shine! Let’s praise the Lord.",
+      verse: "“This is the day that the Lord has made; let us rejoice and be glad in it.” – Psalm 118:24"
+    },
+    {
+      message: "Start your day with a song of joy!",
+      verse: "“I will sing of your strength in the morning.” – Psalm 59:16"
+    },
+    {
+      message: "Good morning! His mercies are new every morning.",
+      verse: "“Because of the Lord’s great love we are not consumed, for his compassions never fail.” – Lamentations 3:22–23"
+    }
+  ],
+  afternoon: [
+    {
+      message: "Good afternoon! Let’s praise together.",
+      verse: "“My heart, O God, is steadfast; I will sing and make music with all my soul.” – Psalm 108:1"
+    },
+    {
+      message: "Keep the song in your heart this afternoon.",
+      verse: "“Sing to the Lord, for he has done glorious things.” – Isaiah 12:5"
+    },
+    {
+      message: "Lift up His name this sunny afternoon!",
+      verse: "“I will bless the Lord at all times; his praise shall continually be in my mouth.” – Psalm 34:1"
+    },
+    {
+      message: "Singing is a sweet offering — even in the midday.",
+      verse: "“Let the message of Christ dwell among you richly… singing to God with gratitude.” – Colossians 3:16"
+    }
+  ],
+  evening: [
+    {
+      message: "Good evening! Let's worship in song.",
+      verse: "“From the rising of the sun to its setting, the name of the Lord is to be praised.” – Psalm 113:3"
+    },
+    {
+      message: "Winding down with praises? Perfect timing.",
+      verse: "“I will praise the Lord, who counsels me; even at night my heart instructs me.” – Psalm 16:7"
+    },
+    {
+      message: "Let the melodies of faith calm your evening.",
+      verse: "“On my bed I remember you; I think of you through the watches of the night.” – Psalm 63:6"
+    },
+    {
+      message: "Evenings are made for reflection and praise.",
+      verse: "“When I remember you upon my bed, and meditate on you in the watches of the night.” – Psalm 63:6"
+    }
+  ]
+};
+
 
 const SacredHymnsApp = () => {
   const [showAppInfoModal, setShowAppInfoModal] = useState(false);
@@ -771,78 +830,33 @@ const SacredHymnsApp = () => {
   const playerRef = useRef(null);
   const scrollIntervalRef = useRef(null);
   const scrollPositionRef = useRef(0);
+  const [welcomeMessage, setWelcomeMessage] = useState('');
+  const [welcomeVerse, setWelcomeVerse] = useState('');
 
-  const AnimatedBackground = () => {
-    return (
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        {/* Sky gradient */}
-        <div className={`absolute inset-0 transition-colors duration-1000 ${darkMode
-          ? 'bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-900'
-          : 'bg-gradient-to-b from-sky-100 via-blue-100 to-sky-50'
-          }`}></div>
 
-        {/* Animated clouds */}
-        <div className="absolute top-10 left-[10%] animate-cloud1">
-          <Cloud className={`${darkMode ? 'text-gray-700/30' : 'text-white'} w-24 h-16`} />
-        </div>
-        <div className="absolute top-40 right-[15%] animate-cloud2">
-          <Cloud className={`${darkMode ? 'text-gray-700/30' : 'text-white'} w-32 h-20`} />
-        </div>
-        <div className="absolute bottom-20 left-[20%] animate-cloud3">
-          <Cloud className={`${darkMode ? 'text-gray-700/20' : 'text-white/90'} w-28 h-18`} />
-        </div>
+  useEffect(() => {
+    const hour = new Date().getHours();
+    let timePeriod = 'morning';
 
-        {/* Subtle particles */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 30 }).map((_, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full ${darkMode ? 'bg-blue-400/10' : 'bg-blue-200/40'
-                }`}
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 8 + 2}px`,
-                height: `${Math.random() * 8 + 2}px`,
-                animation: `pulse ${Math.random() * 4 + 2}s infinite`
-              }}
-            ></div>
-          ))}
-        </div>
+    if (hour >= 12 && hour < 18) timePeriod = 'afternoon';
+    else if (hour >= 18 || hour < 5) timePeriod = 'evening';
 
-        {/* CSS Animations */}
-        <style jsx>{`
-        @keyframes cloud1 {
-          0%, 100% { transform: translateX(0) translateY(0); }
-          50% { transform: translateX(20px) translateY(5px); }
-        }
-        @keyframes cloud2 {
-          0%, 100% { transform: translateX(0) translateY(0); }
-          50% { transform: translateX(-25px) translateY(3px); }
-        }
-        @keyframes cloud3 {
-          0%, 100% { transform: translateX(0) translateY(0); }
-          50% { transform: translateX(15px) translateY(-2px); }
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 0.7; transform: scale(1.2); }
-        }
-        .animate-cloud1 {
-          animation: cloud1 15s ease-in-out infinite;
-        }
-        .animate-cloud2 {
-          animation: cloud2 20s ease-in-out infinite;
-        }
-        .animate-cloud3 {
-          animation: cloud3 18s ease-in-out infinite;
-        }
-      `}</style>
-      </div>
+    const messages = greetingsByTime[timePeriod];
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    const { message, verse } = messages[randomIndex];
 
-    );
+    setWelcomeMessage(message);
+    setWelcomeVerse(verse);
+  }, []);
 
-  };
+  const [backgroundImage, setBackgroundImage] = useState('');
+
+  useEffect(() => {
+    const images = Array.from({ length: 11 }, (_, i) => `/public/backgrounds/img${i + 1}.jpg`);
+    const randomIndex = Math.floor(Math.random() * images.length);
+    setBackgroundImage(images[randomIndex]);
+  }, []);
+
 
   // Initialize component
   useEffect(() => {
@@ -1013,17 +1027,16 @@ const SacredHymnsApp = () => {
                 <Grid className="h-5 w-5" />
               </button>
               <h1
-                onClick={() => setShowAppInfoModal(true)}
-                className={`text-xl font-bold cursor-pointer hover:underline ${darkMode ? 'text-white' : 'text-gray-900'}`}
+                className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}
               >
                 SING UNTO THE LORD
               </h1>
               <button
-                  onClick={() => setShowAppInfoModal(true)}
-                  className={`p-3 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
-                >
-                  <Info className="h-6 w-6" />
-                </button>
+                onClick={() => setShowAppInfoModal(true)}
+                className={`p-3 rounded-full transition-colors ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+              >
+                <Info className="h-6 w-6" />
+              </button>
 
             </div>
           </div>
@@ -1457,12 +1470,14 @@ const SacredHymnsApp = () => {
   const HomeView = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="text-center mb-8">
-        <h2 className={`text-3xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-          Welcome to Sing Unto The Lord.
-        </h2>
-        <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-          A collection of hymns for worship, praise, and reflection. For UNIMA Church of Christ members and friends.
-        </p>
+        <div className="text-center mt-6 px-4">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-black">
+            {welcomeMessage}
+          </h2>
+          <p className="text-sm italic mt-2 text-gray-600 dark:text-blue-400">
+            {welcomeVerse}
+          </p>
+        </div>
       </div>
 
       <SearchBar />
@@ -1516,186 +1531,197 @@ const SacredHymnsApp = () => {
 
   // Main render
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      <AnimatedBackground />
-      <NavigationHeader />
+    <div className="relative min-h-screen w-full">
+      {/* Background layer with 10% opacity */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          opacity: 0.1,
+          zIndex: -1,
+        }}
+      />
 
-      {currentView === 'home' && <HomeView />}
-      {currentView === 'hymn' && <HymnView />}
-      {currentView === 'recent' && <RecentlyViewedView />}
-      {currentView === 'favorites' && <FavoriteHymnsView />}
+      {/* Foreground App Content */}
+      <div className={`relative z-10 min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
 
-      {showHymnModal && selectedHymn && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className={`w-full max-w-lg mx-auto p-6 rounded-lg shadow-lg transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold">About "{selectedHymn.title}"</h2>
-              <button onClick={() => setShowHymnModal(false)} className={`p-3 rounded-full transition duration-300 ease-in-out transform hover:scale-110 ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
-              >
-                ✕
-              </button>
-            </div>
+        <NavigationHeader />
 
-            <p><strong>Author:</strong> {selectedHymn.author}</p>
-            <p><strong>Category:</strong> {selectedHymn.category}</p>
-            <p><strong>First Line:</strong> {selectedHymn.firstLine}</p>
+        {currentView === 'home' && <HomeView />}
+        {currentView === 'hymn' && <HymnView />}
+        {currentView === 'recent' && <RecentlyViewedView />}
+        {currentView === 'favorites' && <FavoriteHymnsView />}
 
-            {selectedHymn.bio && (
-              <div className="mt-4">
-                <h3 className="text-lg font-semibold mb-1">Composer Biography</h3>
-                <p className="text-sm leading-relaxed">{selectedHymn.bio}</p>
-              </div>
-            )}
-
-            <div className="mt-6 text-right">
-              <button
-                onClick={() => setShowHymnModal(false)}
-                className={`p-3 rounded-full transition duration-300 ease-in-out transform hover:scale-110 ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-      <footer
-        className={`fixed bottom-0 inset-x-0 z-50 text-center text-xs font-bold py-2 border-t
-    ${darkMode
-            ? 'bg-gray-900 text-gray-200 border-gray-700'
-            : 'bg-white text-black border-gray-200'}`}
-      >
-        © 2025 UNIMA Church of Christ. All rights reserved.
-      </footer>
-
-      {showNumberGridModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-          <div className={`w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg p-6 shadow-xl transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
-
-            {/* Modal Header */}
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold">Quick Access Hymns</h2>
-              <button
-                onClick={() => setShowNumberGridModal(false)}
-                className="text-2xl font-bold px-2 hover:text-red-500"
-              >
-                ✕
-              </button>
-            </div>
-
-
-            <div className="grid grid-cols-5 sm:grid-cols-10 gap-2">
-              {hymnsDatabase.map(hymn => (
-                <button
-                  key={hymn.id}
-                  onClick={() => {
-                    openHymn(hymn);
-                    setShowNumberGridModal(false); // auto-close after selection
-                  }}
-                  className={`p-6 rounded-lg border-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg ${darkMode
-                    ? 'bg-gray-800 border-gray-600 hover:border-blue-500'
-                    : 'bg-white border-gray-200 hover:border-blue-500'
-                    }`}
+        {showHymnModal && selectedHymn && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className={`w-full max-w-lg mx-auto p-6 rounded-lg shadow-lg transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold">About "{selectedHymn.title}"</h2>
+                <button onClick={() => setShowHymnModal(false)} className={`p-3 rounded-full transition duration-300 ease-in-out transform hover:scale-110 ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
                 >
-                  <div className="text-lg font-bold text-blue-600">{hymn.id}</div>
-                  <div className="text-xs mt-1 opacity-75 truncate">{hymn.title}</div>
+                  ✕
                 </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {showAppInfoModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className={`w-full max-w-lg mx-auto h-[90vh] p-6 rounded-lg shadow-xl overflow-y-auto transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
-
-            {/* Close Button */}
-            <div className="flex justify-between items-center mb-4 sticky top-0 bg-inherit z-10">
-              <h2 className="text-2xl font-bold">About This App</h2>
-              <button
-                onClick={() => setShowAppInfoModal(false)}
-                className="text-2xl font-bold px-2 hover:text-red-500"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Avatar */}
-            <div className="flex justify-center mb-4">
-              <img
-                src="logo192.png"
-                alt="App Icon"
-                className="w-24 h-24 rounded-full border-4 border-blue-500 shadow-md object-cover"
-              />
-            </div>
-
-            {/* Info */}
-            <div className="space-y-4 text-base leading-relaxed text-center">
-              <p>
-                <strong>SING UNTO THE LORD</strong> is a modern hymnbook app designed for seamless worship and quick access to timeless hymns.
-              </p>
-              <p>
-                Developed by <strong>Josophat Makawa</strong> for the <strong>University of Malawi Church of Christ</strong> and Christian worshipers worldwide.
-              </p>
-              <p>
-                <strong>Version:</strong> 1.0.0<br />
-                <strong>Built With:</strong> React + TailwindCSS
-              </p>
-              <p className="font-semibold">For Feedback, Suggestions and Support, contact the developer:</p>
-
-              {/* Social Links with Icons */}
-              <div className="flex flex-wrap justify-center gap-4 mt-4 text-blue-500">
-                <a href="https://web.facebook.com/josophat.chifundo.makawa" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-                  <FontAwesomeIcon icon={faFacebook} />
-
-                </a>
-                <a href="https://www.instagram.com/kiziojosh/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-                  <FontAwesomeIcon icon={faInstagram} />
-
-                </a>
-                <a href="https://www.linkedin.com/in/josophat-makawa-abaa21366/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-                  <FontAwesomeIcon icon={faLinkedin} />
-
-                </a>
-                <a href="https://github.com/KizioTech" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-                  <FontAwesomeIcon icon={faGithub} />
-
-                </a>
-                <a
-                  href="https://wa.me/265999978828"  // Replace with your actual WhatsApp number
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:underline"
-                >
-                  <FontAwesomeIcon icon={faWhatsapp} />
-                </a>
-
-                <a href="https://t.me/KizioJosh" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
-                  <FontAwesomeIcon icon={faTelegram} />
-
-                </a>
               </div>
 
-            </div>
+              <p><strong>Author:</strong> {selectedHymn.author}</p>
+              <p><strong>Category:</strong> {selectedHymn.category}</p>
+              <p><strong>First Line:</strong> {selectedHymn.firstLine}</p>
 
-            {/* Close */}
-            <div className="mt-6 text-right">
-              <button
-                onClick={() => setShowAppInfoModal(false)}
-                className={`px-4 py-2 rounded ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-100 text-blue-800 hover:bg-blue-200'}`}
-              >
-                Close
-              </button>
+              {selectedHymn.bio && (
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold mb-1">Composer Biography</h3>
+                  <p className="text-sm leading-relaxed">{selectedHymn.bio}</p>
+                </div>
+              )}
+
+              <div className="mt-6 text-right">
+                <button
+                  onClick={() => setShowHymnModal(false)}
+                  className={`p-3 rounded-full transition duration-300 ease-in-out transform hover:scale-110 ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+        <footer
+          className={`fixed bottom-0 inset-x-0 z-50 text-center text-xs font-bold py-2 border-t
+    ${darkMode
+              ? 'bg-gray-900 text-gray-200 border-gray-700'
+              : 'bg-white text-black border-gray-200'}`}
+        >
+          © 2025 UNIMA Church of Christ. All rights reserved.
+        </footer>
+
+        {showNumberGridModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+            <div className={`w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg p-6 shadow-xl transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+
+              {/* Modal Header */}
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold">Quick Access Hymns</h2>
+                <button
+                  onClick={() => setShowNumberGridModal(false)}
+                  className="text-2xl font-bold px-2 hover:text-red-500"
+                >
+                  ✕
+                </button>
+              </div>
 
 
-      {/* Service Worker Registration */}
-      {typeof window !== 'undefined' && (
-        <script dangerouslySetInnerHTML={{
-          __html: `
+              <div className="grid grid-cols-5 sm:grid-cols-10 gap-2">
+                {hymnsDatabase.map(hymn => (
+                  <button
+                    key={hymn.id}
+                    onClick={() => {
+                      openHymn(hymn);
+                      setShowNumberGridModal(false); // auto-close after selection
+                    }}
+                    className={`p-6 rounded-lg border-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg ${darkMode
+                      ? 'bg-gray-800 border-gray-600 hover:border-blue-500'
+                      : 'bg-white border-gray-200 hover:border-blue-500'
+                      }`}
+                  >
+                    <div className="text-lg font-bold text-blue-600">{hymn.id}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {showAppInfoModal && (
+          <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+            <div className={`w-full max-w-lg mx-auto h-[90vh] p-6 rounded-lg shadow-xl overflow-y-auto transform transition duration-300 ease-in-out scale-100 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+
+              {/* Close Button */}
+              <div className="flex justify-between items-center mb-4 sticky top-0 bg-inherit z-10">
+                <h2 className="text-2xl font-bold">About This App</h2>
+                <button
+                  onClick={() => setShowAppInfoModal(false)}
+                  className="text-2xl font-bold px-2 hover:text-red-500"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* Avatar */}
+              <div className="flex justify-center mb-4">
+                <img
+                  src="logo192.png"
+                  alt="App Icon"
+                  className="w-24 h-24 rounded-full border-4 border-blue-500 shadow-md object-cover"
+                />
+              </div>
+
+              {/* Info */}
+              <div className="space-y-4 text-base leading-relaxed text-center">
+                <p>
+                  <strong>SING UNTO THE LORD</strong> is a modern hymnbook app designed for seamless worship and quick access to timeless hymns.
+                </p>
+                <p>
+                  Developed by <strong>Josophat Makawa</strong> for the <strong>University of Malawi Church of Christ</strong> and Christian worshipers worldwide.
+                </p>
+                <p>
+                  <strong>Version:</strong> 1.6.0<br />
+                  <strong>Built With:</strong> React + TailwindCSS
+                </p>
+                <p className="font-semibold">For Feedback, Suggestions and Support, contact the developer:</p>
+
+                {/* Social Links with Icons */}
+                <div className="flex flex-wrap justify-center gap-4 mt-4 text-blue-500">
+                  <a href="https://web.facebook.com/josophat.chifundo.makawa" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                    <FontAwesomeIcon icon={faFacebook} />
+
+                  </a>
+                  <a href="https://www.instagram.com/kiziojosh/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                    <FontAwesomeIcon icon={faInstagram} />
+
+                  </a>
+                  <a href="https://www.linkedin.com/in/josophat-makawa-abaa21366/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                    <FontAwesomeIcon icon={faLinkedin} />
+
+                  </a>
+                  <a href="https://github.com/KizioTech" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                    <FontAwesomeIcon icon={faGithub} />
+
+                  </a>
+                  <a
+                    href="https://wa.me/265999978828"  // Replace with your actual WhatsApp number
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:underline"
+                  >
+                    <FontAwesomeIcon icon={faWhatsapp} />
+                  </a>
+
+                  <a href="https://t.me/KizioJosh" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                    <FontAwesomeIcon icon={faTelegram} />
+
+                  </a>
+                </div>
+
+              </div>
+
+              {/* Close */}
+              <div className="mt-6 text-right">
+                <button
+                  onClick={() => setShowAppInfoModal(false)}
+                  className={`px-4 py-2 rounded ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-100 text-blue-800 hover:bg-blue-200'}`}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+
+        {/* Service Worker Registration */}
+        {typeof window !== 'undefined' && (
+          <script dangerouslySetInnerHTML={{
+            __html: `
             if ('serviceWorker' in navigator) {
               window.addEventListener('load', function() {
                 navigator.serviceWorker.register('/sw.js')
@@ -1708,19 +1734,20 @@ const SacredHymnsApp = () => {
               });
             }
           `
-        }} />
-      )}
+          }} />
+        )}
 
-      {/* PWA Manifest */}
-      <link rel="manifest" href="/manifest.json" />
-      <meta name="theme-color" content="#2563eb" />
-      <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="SING UNTO THE LORD" />
-      <meta name="description" content="A Collection of UNIMA Church of Christ Hymns." />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </div>
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#2563eb" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="SING UNTO THE LORD" />
+        <meta name="description" content="A Collection of UNIMA Church of Christ Hymns." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </div>
+    </div> 
   );
 };
 
