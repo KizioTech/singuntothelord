@@ -803,7 +803,19 @@ const greetingsByTime = {
     }
   ]
 };
-
+const backgroundImages = [
+  '/backgrounds/img1.jpg',
+  '/backgrounds/img2.jpg',
+  '/backgrounds/img3.jpg',
+  '/backgrounds/img4.jpg',
+  '/backgrounds/img5.jpg',
+  '/backgrounds/img6.jpg',
+  '/backgrounds/img7.jpg',
+  '/backgrounds/img8.jpg',
+  '/backgrounds/img9.jpg',
+  '/backgrounds/img10.jpg',
+  '/backgrounds/img11.jpg',
+];
 
 const SacredHymnsApp = () => {
   const [showAppInfoModal, setShowAppInfoModal] = useState(false);
@@ -832,6 +844,7 @@ const SacredHymnsApp = () => {
   const scrollPositionRef = useRef(0);
   const [welcomeMessage, setWelcomeMessage] = useState('');
   const [welcomeVerse, setWelcomeVerse] = useState('');
+  const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
 
 
   useEffect(() => {
@@ -849,21 +862,10 @@ const SacredHymnsApp = () => {
     setWelcomeVerse(verse);
   }, []);
 
-  const backgroundImages = [
-    '/backgrounds/img1.jpg',
-    '/backgrounds/img2.jpg',
-    '/backgrounds/img3.jpg',
-    '/backgrounds/img4.jpg',
-    '/backgrounds/img5.jpg',
-    '/backgrounds/img6.jpg',
-    '/backgrounds/img7.jpg',
-    '/backgrounds/img8.jpg',
-    '/backgrounds/img9.jpg',
-    '/backgrounds/img10.jpg',
-    '/backgrounds/img11.jpg',
-  ];
-  const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
-
+  useEffect(() => {
+    console.log("Background images:", backgroundImages);
+    console.log("Selected background:", randomBg);
+  }, []);
 
   // Initialize component
   useEffect(() => {
@@ -1537,15 +1539,18 @@ const SacredHymnsApp = () => {
   }, [currentView]);
 
   // Main render
+  console.log("Selected background:", randomBg);
+  <img src={randomBg} alt="Test" style={{ width: '100px', height: 'auto' }} />
+
   return (
     <div
       className="min-h-screen"
       style={{
-        backgroundImage: `url(${randomBg})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL}${randomBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundOpacity: darkMode ? '0.8' : '0.7',
+        backgroundAttachment: 'fixed',
       }}
     >
 
