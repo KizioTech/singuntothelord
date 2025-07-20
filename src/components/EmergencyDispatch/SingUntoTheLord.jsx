@@ -857,7 +857,6 @@ const SacredHymnsApp = () => {
     setBackgroundImage(images[randomIndex]);
   }, []);
 
-
   // Initialize component
   useEffect(() => {
     // Check for stored favorites
@@ -1532,18 +1531,17 @@ const SacredHymnsApp = () => {
   // Main render
   return (
     <div className="relative min-h-screen w-full">
-      {/* Background layer with 10% opacity */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          opacity: 0.5,
+          opacity: 0.7, // Increased opacity for better visibility
           zIndex: -1,
+          backgroundAttachment: 'fixed', // Add parallax effect
         }}
       />
-
       {/* Foreground App Content */}
-      <div className={`relative z-10 min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+      <div className={`relative z-10 min-h-screen ${darkMode ? 'bg-gray-900/70' : 'bg-gray-50/70'}`}>
 
         <NavigationHeader />
 
@@ -1747,7 +1745,7 @@ const SacredHymnsApp = () => {
         <meta name="description" content="A Collection of UNIMA Church of Christ Hymns." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </div>
-    </div> 
+    </div>
   );
 };
 
