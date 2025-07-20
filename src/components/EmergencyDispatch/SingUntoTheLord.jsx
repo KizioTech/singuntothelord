@@ -849,13 +849,21 @@ const SacredHymnsApp = () => {
     setWelcomeVerse(verse);
   }, []);
 
-  const [backgroundImage, setBackgroundImage] = useState('');
+  const backgroundImages = [
+    '/backgrounds/img1.jpg',
+    '/backgrounds/img2.jpg',
+    '/backgrounds/img3.jpg',
+    '/backgrounds/img4.jpg',
+    '/backgrounds/img5.jpg',
+    '/backgrounds/img6.jpg',
+    '/backgrounds/img7.jpg',
+    '/backgrounds/img8.jpg',
+    '/backgrounds/img9.jpg',
+    '/backgrounds/img10.jpg',
+    '/backgrounds/img11.jpg',
+  ];
+  const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
 
-  useEffect(() => {
-    const images = Array.from({ length: 11 }, (_, i) => `/backgrounds/img${i + 1}.jpg`);
-    const randomIndex = Math.floor(Math.random() * images.length);
-    setBackgroundImage(images[randomIndex]);
-  }, []);
 
   // Initialize component
   useEffect(() => {
@@ -1530,16 +1538,17 @@ const SacredHymnsApp = () => {
 
   // Main render
   return (
-    <div className="relative min-h-screen w-full">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          opacity: 0.7, // Increased opacity for better visibility
-          zIndex: -1,
-          backgroundAttachment: 'fixed', // Add parallax effect
-        }}
-      />
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundImage: `url(${randomBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundOpacity: darkMode ? '0.8' : '0.7',
+      }}
+    >
+
       {/* Foreground App Content */}
       <div className={`relative z-10 min-h-screen ${darkMode ? 'bg-gray-900/70' : 'bg-gray-50/70'}`}>
 
