@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/singuntothelord/static/css/main.640c7d00.css",
-    "main.js": "/singuntothelord/static/js/main.c5f799ec.js",
+    "main.css": "/singuntothelord/static/css/main.00a302af.css",
+    "main.js": "/singuntothelord/static/js/main.7e7537cc.js",
     "service-worker.js": "/singuntothelord/service-worker.js",
     "index.html": "/singuntothelord/index.html",
-    "main.640c7d00.css.map": "/singuntothelord/static/css/main.640c7d00.css.map",
-    "main.c5f799ec.js.map": "/singuntothelord/static/js/main.c5f799ec.js.map"
+    "main.00a302af.css.map": "/singuntothelord/static/css/main.00a302af.css.map",
+    "main.7e7537cc.js.map": "/singuntothelord/static/js/main.7e7537cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.640c7d00.css",
-    "static/js/main.c5f799ec.js"
+    "static/css/main.00a302af.css",
+    "static/js/main.7e7537cc.js"
   ]
 }
