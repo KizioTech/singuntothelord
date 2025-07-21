@@ -1,8 +1,7 @@
 
-import { Cloud } from 'lucide-react';
 import { Info } from 'lucide-react';
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Search, Heart, Play, Pause, Volume2, Grid, List, Moon, Sun, Home, ArrowLeft, Settings, ChevronDown, ChevronUp, Music, Clock, Star, Book, Cross, Gift, Sunrise, Shield } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Search, Heart, Grid, Moon, Sun, ArrowLeft, ChevronDown, ChevronUp, Music, Clock, Star, Book, Cross, Gift, Sunrise, Shield } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
@@ -764,6 +763,10 @@ const greetingsByTime = {
     {
       message: "Good morning! His mercies are new every morning.",
       verse: "“Because of the Lord’s great love we are not consumed, for his compassions never fail.” – Lamentations 3:22–23"
+    },
+    {
+      message: "It's always good to praise our God in music!",
+      verse: "Praise the Lord! Praise God in His sanctuary; Praise Him in His mighty heavens! - Psalm 150:1"
     }
   ],
   afternoon: [
@@ -830,15 +833,15 @@ const SacredHymnsApp = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [fontSize, setFontSize] = useState(16);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [ setCurrentTime] = useState(0);
+  const [setDuration] = useState(0);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [autoScroll, setAutoScroll] = useState(false);
   const [presentationMode, setPresentationMode] = useState(false);
   const [playlists, setPlaylists] = useState([]);
-  const [showPlaylistModal, setShowPlaylistModal] = useState(false);
+  const [ setShowPlaylistModal] = useState(false);
   const [showYoutubePlayer, setShowYoutubePlayer] = useState(false);
-  const [showHymnInfo, setShowHymnInfo] = useState(false);
+  const [showHymnInfo] = useState(false);
   const playerRef = useRef(null);
   const scrollIntervalRef = useRef(null);
   const scrollPositionRef = useRef(0);
@@ -865,7 +868,7 @@ const SacredHymnsApp = () => {
   useEffect(() => {
     console.log("Background images:", backgroundImages);
     console.log("Selected background:", randomBg);
-  }, []);
+  }, [randomBg]);
 
   // Initialize component
   useEffect(() => {
@@ -916,6 +919,17 @@ const SacredHymnsApp = () => {
     localStorage.setItem('hymnPlaylists', JSON.stringify(playlists));
   }, [playlists]);
 
+  const togglePlay = React.useCallback(() => {
+    if (playerRef.current) {
+      if (isPlaying) {
+        playerRef.current.pause();
+      } else {
+        playerRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  }, [isPlaying]);
+
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -936,7 +950,7 @@ const SacredHymnsApp = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedHymn, isPlaying, presentationMode]);
+  }, [selectedHymn, isPlaying, presentationMode, setShowPlaylistModal, togglePlay]);
 
   const filteredHymns = hymnsDatabase.filter(hymn => {
     const matchesSearch = searchTerm === '' ||
@@ -974,19 +988,6 @@ const SacredHymnsApp = () => {
     setCurrentTime(0);
     setDuration(0);
     setShowYoutubePlayer(false);
-  };
-
-
-
-  const togglePlay = () => {
-    if (playerRef.current) {
-      if (isPlaying) {
-        playerRef.current.pause();
-      } else {
-        playerRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
   };
 
   const startAutoScroll = () => {
@@ -1169,9 +1170,16 @@ const SacredHymnsApp = () => {
 
         <div className="mt-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            {isOnline && (
+            {isOnline && hymn.youtubeId && (
               <div className="flex items-center space-x-1 text-green-600">
-                <Volume2 className="h-4 w-4" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M10 16.5l6-4.5-6-4.5v9zm12-4.5c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10 10-4.477 10-10zm-2 0c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8z" />
+                </svg>
                 <span className="text-xs">Video Available</span>
               </div>
             )}
@@ -1480,10 +1488,10 @@ const SacredHymnsApp = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="text-center mb-8">
         <div className="text-center mt-6 px-4">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-black">
+          <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             {welcomeMessage}
           </h2>
-          <p className="text-sm italic mt-2 text-gray-600 dark:text-blue-400">
+          <p className={`text-sm font-italic ${darkMode ? 'text-blue' : 'text-blue-900'}`}>
             {welcomeVerse}
           </p>
         </div>
@@ -1676,7 +1684,7 @@ const SacredHymnsApp = () => {
                   Developed by <strong>Josophat Makawa</strong> for the <strong>University of Malawi Church of Christ</strong> and Christian worshipers worldwide.
                 </p>
                 <p>
-                  <strong>Version:</strong> 1.6.0<br />
+                  <strong>Version:</strong> 1.6.5<br />
                   <strong>Built With:</strong> React + TailwindCSS
                 </p>
                 <p className="font-semibold">For Feedback, Suggestions and Support, contact the developer:</p>
