@@ -1,7 +1,7 @@
 
 import { Info } from 'lucide-react';
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, Heart, Grid, Moon, Sun, ArrowLeft, ChevronDown, ChevronUp, Music, Clock, Star, Book, Cross, Gift, Sunrise, Shield } from 'lucide-react';
+import { Search, Heart, Grid, Moon, Sun, ArrowLeft, ChevronDown, ChevronUp, Music, Clock, Star, Book, Cross, Gift, Sunrise, Shield, Flame } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
@@ -521,7 +521,7 @@ const hymnsDatabase = [
     "id": 36,
     "title": "Holy, Holy, Holy",
     "author": "Reginald Heber",
-    "category": "Trinity",
+    "category": "worship",
     "verses": [
       "Holy, holy, holy! Lord God Almighty!\nEarly in the morning our song shall rise to Thee\nHoly, holy, holy! Merciful and mighty!\nGod in three Persons, blessed Trinity!",
       "Holy, holy, holy! All the saints adore Thee\nCasting down their golden crowns around the glassy sea\nCherubim and seraphim falling down before Thee\nWhich wert, and art, and evermore shalt be",
@@ -711,7 +711,7 @@ const hymnsDatabase = [
     "id": 49,
     "title": "In the Garden",
     "author": "C. Austin Miles",
-    "category": "Intimacy",
+    "category": "Hope",
     "verses": [
       "I come to the garden alone\nWhile the dew is still on the roses\nAnd the voice I hear falling on my ear\nThe Son of God discloses\n\nAnd He walks with me\nAnd He talks with me\nAnd He tells me I am His own\nAnd the joy we share as we tarry there\nNone other has ever known",
       "He speaks, and the sound of His voice\nIs so sweet the birds hush their singing\nAnd the melody that He gave to me\nWithin my heart is ringing",
@@ -734,6 +734,20 @@ const hymnsDatabase = [
     "youtubeId": "POyfmQ-hl24",
     "firstLine": "O soul, are you weary and troubled?",
     "bio": "Helen Lemmel was a 20th-century British-American hymn writer. Inspired by a tract titled 'Focused' in 1918, she wrote this hymn during a period of personal crisis and blindness. Its call to Christ-centered perspective remains profoundly relevant."
+  },
+  {
+    "id": 51,
+    "title": "You Are My All in All",
+    "author": "Dennis Jernigan",
+    "category": "Worship",
+    "verses": [
+      "You are my Strength\nWhen I am weak.\nYou are the Treasure\nThat I seek.\nYou are my All in all.\nSeeking You\nAs a precious Jewel,\nLord to give up\nI'd be a fool.\nYou are my All in all!\n\nJesus, Lamb of God,\nWorthy is Your Name.\nJesus, Lamb of God,\nWorthy is Your Name.",
+      "Taking my cross,\nMy sin my shame,\nRising again\nI praise Your Name.\nYou are my All in all.\nWhen I fall down\nYou lift me up.\nWhen I am dry\nYou fill my cup.\nYou are my All in all.",
+      "When the dark powers\nHad done their worst\nJesus brought victory\nO'er the curse.\nYou are my All in all.\nDeath could not\nHold the King of kings.\nNow to His heirs\nNew life He brings.\nYou are my All in all."
+    ],
+    "youtubeId": "_PLOadX6NqQ",
+    "firstLine": "You are my Strength",
+    "bio": "Dennis Jernigan was born in 1959 in Sapulpa, Oklahoma. A prolific contemporary Christian songwriter, he has written hundreds of songs including widely-sung worship songs like 'We Will Worship the Lamb of Glory', 'Thank You', and 'You Are My All in All'. Having been active since the early 1990s, Jernigan sees himself not as a songwriter but as a song 'receiver', and has dedicated much of his life to setting the spiritually captive free."
   }
 ];
 
@@ -745,6 +759,9 @@ const categories = {
   "Praise": { icon: Music, color: "text-green-600" },
   "Assuarance": { icon: Shield, color: "text-orange-600" },
   "Faith": { icon: Heart, color: "text-pink-600" },
+  "Hope": { icon: Star, color: "text-teal-600" },
+  "Love": { icon: Heart, color: "text-red-500" },
+  "Salvation": { icon: Flame, color: "text-yellow-500" }
 };
 const greetingsByTime = {
   morning: [
@@ -833,13 +850,13 @@ const SacredHymnsApp = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [fontSize, setFontSize] = useState(16);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [ setCurrentTime] = useState(0);
-  const [setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [autoScroll, setAutoScroll] = useState(false);
   const [presentationMode, setPresentationMode] = useState(false);
   const [playlists, setPlaylists] = useState([]);
-  const [ setShowPlaylistModal] = useState(false);
+  const [setShowPlaylistModal] = useState(false);
   const [showYoutubePlayer, setShowYoutubePlayer] = useState(false);
   const [showHymnInfo] = useState(false);
   const playerRef = useRef(null);
@@ -1634,9 +1651,13 @@ const SacredHymnsApp = () => {
                 {hymnsDatabase.map(hymn => (
                   <button
                     key={hymn.id}
-                    onClick={() => {
-                      openHymn(hymn);
-                      setShowNumberGridModal(false); // auto-close after selection
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setShowNumberGridModal(false); // Close modal first
+                      setTimeout(() => {
+                        openHymn(hymn);
+                      }, 100); // Small delay to ensure modal closes before navigation
                     }}
                     className={`p-6 rounded-lg border-2 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg ${darkMode
                       ? 'bg-gray-800 border-gray-600 hover:border-blue-500'
