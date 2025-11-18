@@ -1,0 +1,13 @@
+export const backgroundImages = [
+  '/backgrounds/img1.jpg',
+  '/backgrounds/img2.jpg',
+  '/backgrounds/img3.jpg',
+  '/backgrounds/img4.jpg',
+  '/backgrounds/img5.jpg',
+  '/backgrounds/img6.jpg',
+  '/backgrounds/img7.jpg',
+  '/backgrounds/img8.jpg',
+  '/backgrounds/img9.jpg',
+  '/backgrounds/img10.jpg',
+  '/backgrounds/img11.jpg',
+];
