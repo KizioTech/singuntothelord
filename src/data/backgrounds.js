@@ -10,4 +10,11 @@ export const backgroundImages = [
   '/backgrounds/img9.jpg',
   '/backgrounds/img10.jpg',
   '/backgrounds/img11.jpg',
+  '/backgrounds/img12.jpg',
+  '/backgrounds/img13.jpg',
+  '/backgrounds/img14.jpg',
+  '/backgrounds/img15.jpg',
+  '/backgrounds/img16.jpg',
+  '/backgrounds/img17.jpg',
+  '/backgrounds/img18.jpg',
 ];

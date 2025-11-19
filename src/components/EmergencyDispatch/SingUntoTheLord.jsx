@@ -184,6 +184,7 @@ const SacredHymnsApp = () => {
     setCurrentTime(0);
     setDuration(0);
     setShowYoutubePlayer(false);
+    window.scrollTo(0, 0);
   };
 
   const startAutoScroll = () => {
@@ -219,7 +220,12 @@ const SacredHymnsApp = () => {
           <div className="flex items-center space-x-4">
             {currentView !== 'home' && (
               <button
-                onClick={() => setCurrentView('home')}
+                onClick={() => {
+                  setCurrentView('home');
+                  setTimeout(() => {
+                    window.scrollTo(0, scrollPositionRef.current);
+                  }, 0);
+                }}
                 className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'} transition-colors`}
               >
                 <ArrowLeft className="h-5 w-5" />
@@ -228,12 +234,12 @@ const SacredHymnsApp = () => {
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => setShowNumberGridModal(true)}
-                className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium shadow-sm transition duration-300 ease-in-out transform hover:scale-105 ${darkMode ? 'bg-gray-700 text-white hover:bg-blue-700' : 'bg-blue-100 text-blue-800 hover:bg-blue-200'}`}
+                className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium shadow-sm transition duration-300 ease-in-out transform hover:scale-105 ${darkMode ? 'bg-gray-700 text-white hover:bg-gold-700' : 'bg-gold-100 text-gold-800 hover:bg-gold-200'}`}
               >
                 <Grid className="h-5 w-5" />
               </button>
               <h1
-                className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}
+                className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gold-800'}`}
               >
                 SING UNTO THE LORD
               </h1>
@@ -289,7 +295,7 @@ const SacredHymnsApp = () => {
       <button
         onClick={() => setSelectedCategory('')}
         className={`px-4 py-2 rounded-full transition-colors ${selectedCategory === ''
-          ? 'bg-blue-600 text-white'
+          ? 'bg-gold-600 text-white'
           : darkMode
             ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -302,7 +308,7 @@ const SacredHymnsApp = () => {
           key={category}
           onClick={() => setSelectedCategory(category)}
           className={`px-4 py-2 rounded-full transition-colors flex items-center space-x-2 ${selectedCategory === category
-            ? 'bg-blue-600 text-white'
+            ? 'bg-gold-600 text-white'
             : darkMode
               ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -328,7 +334,7 @@ const SacredHymnsApp = () => {
       >
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center space-x-3">
-            <div className="text-2xl font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg">
+            <div className="text-2xl font-bold text-gold-800 bg-gold-100 px-3 py-1 rounded-lg">
               {hymn.id}
             </div>
             <div className="flex items-center space-x-2">
@@ -393,6 +399,23 @@ const SacredHymnsApp = () => {
     const hymn = selectedHymn;
     if (!hymn) return null;
 
+    const renderVerseContent = (verseText) => {
+      const parts = verseText.split(/\n \n/);
+      if (parts.length > 1) {
+        const verse = parts[0];
+        const chorus = parts.slice(1).join('\n \n');
+        return (
+          <>
+            <div className="whitespace-pre-line">{verse}</div>
+            <div className="bg-blue-100/10 dark:bg-blue-900/10 p-4 rounded-lg mt-4 italic font-bold text-center border-l-4 border-blue-500 whitespace-pre-line">
+              {chorus}
+            </div>
+          </>
+        );
+      }
+      return <div className="whitespace-pre-line">{verseText}</div>;
+    };
+
     return (
       <div className={`${presentationMode ? 'fixed inset-0 z-50 flex items-center justify-center' : ''} ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
         {!presentationMode && (
@@ -400,7 +423,7 @@ const SacredHymnsApp = () => {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-4">
 
-                <div className="text-3xl font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-lg">
+                <div className="text-3xl font-bold text-gold-800 bg-gold-100 px-4 py-2 rounded-lg">
                   {hymn.id}
                 </div>
                 <div>
@@ -468,7 +491,7 @@ const SacredHymnsApp = () => {
               <button
                 onClick={toggleAutoScroll}
                 className={`px-4 py-2 rounded-lg transition-colors ${autoScroll
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-gold-600 text-white'
                   : darkMode
                     ? 'bg-gray-700 hover:bg-gray-600 text-gray-300'
                     : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
@@ -521,10 +544,10 @@ const SacredHymnsApp = () => {
                     Verse {index + 1}
                   </div>
                   <div
-                    className={`text-lg leading-relaxed whitespace-pre-line ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}
+                    className={`text-lg leading-relaxed ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}
                     style={{ fontSize: `${fontSize}px` }}
                   >
-                    {verse}
+                    {renderVerseContent(verse)}
                   </div>
                 </div>
               ))}
@@ -554,8 +577,8 @@ const SacredHymnsApp = () => {
                   <div className="text-lg font-semibold mb-4 text-gray-400">
                     Verse {index + 1}
                   </div>
-                  <div className="text-3xl leading-relaxed whitespace-pre-line text-white">
-                    {verse}
+                  <div className="text-3xl leading-relaxed text-white">
+                    {renderVerseContent(verse)}
                   </div>
                 </div>
               ))}
@@ -684,10 +707,10 @@ const SacredHymnsApp = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="text-center mb-8">
         <div className="text-center mt-6 px-4">
-          <h2 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className="text-xl font-bold text-white">
             {welcomeMessage}
           </h2>
-          <p className={`text-sm font-italic ${darkMode ? 'text-blue' : 'text-blue-900'}`}>
+          <p className="text-sm italic text-blue-200">
             {welcomeVerse}
           </p>
         </div>
@@ -745,7 +768,7 @@ const SacredHymnsApp = () => {
   // Main render
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen relative"
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL}${randomBg})`,
         backgroundSize: 'cover',
@@ -754,9 +777,11 @@ const SacredHymnsApp = () => {
         backgroundAttachment: 'fixed',
       }}
     >
+      {/* Background Overlay */}
+      <div className={`absolute inset-0 ${darkMode ? 'bg-black/60' : 'bg-black/50'} z-0`}></div>
 
       {/* Foreground App Content */}
-      <div className={`relative z-10 min-h-screen ${darkMode ? 'bg-gray-900/70' : 'bg-gray-50/70'}`}>
+      <div className="relative z-10 min-h-screen">
 
         <NavigationHeader />
 
@@ -801,8 +826,8 @@ const SacredHymnsApp = () => {
         <footer
           className={`fixed bottom-0 inset-x-0 z-50 text-center text-xs font-bold py-2 border-t
     ${darkMode
-              ? 'bg-gray-900 text-gray-200 border-gray-700'
-              : 'bg-white text-black border-gray-200'}`}
+              ? 'bg-gray-900 text-gold-300 border-gray-700'
+              : 'bg-white text-gold-800 border-gray-200'}`}
         >
           © 2025 UNIMA Church of Christ. All rights reserved.
         </footer>
@@ -881,7 +906,7 @@ const SacredHymnsApp = () => {
                   Developed by <strong>Josophat Makawa</strong> for the <strong>University of Malawi Church of Christ</strong> and Christian worshipers worldwide.
                 </p>
                 <p>
-                  <strong>Version:</strong> 1.6.5<br />
+                  <strong>Version:</strong> 1.7.0<br />
                   <strong>Built With:</strong> React + TailwindCSS
                 </p>
                 <p className="font-semibold">For Feedback, Suggestions and Support, contact the developer:</p>

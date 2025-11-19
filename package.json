@@ -17,6 +17,7 @@
     "react-dom": "^19.1.0",
     "react-leaflet": "^5.0.0",
     "react-scripts": "5.0.1",
+    "react-window": "^2.2.3",
     "recharts": "^3.0.2"
   },
   "scripts": {
